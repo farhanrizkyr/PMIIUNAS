@@ -73,7 +73,7 @@ class PostController extends Controller
     $filename=$file->getClientOriginalName();
     $file->move(public_path('Posts'),$filename);
     
-    storage::delete ('image');
+    
     Post::create([
      'name'=>request()->name,
      'kader_id'=>Auth::user()->id,
@@ -188,6 +188,7 @@ class PostController extends Controller
     'category_id'=>request()->category_id,
     'image'=>$filename,
       ]);
+        storage::delete ('image');
     } else {
      Post::find($id)->update([
            'kader_id'=>Auth::user()->id,
