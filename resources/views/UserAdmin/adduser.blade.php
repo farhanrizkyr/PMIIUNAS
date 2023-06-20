@@ -46,9 +46,13 @@
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Role</label>
   <select class="form-control" name="role">
+    <option value="">Pilih Role</option>
     <option value="Pengurus">Pengurus</option>
     <option value="Panitia">Panitia</option>
   </select>
+  @error('role')
+    <p class="text-danger">{{$message}}</p>
+    @enderror
   </div>
  
   <div class="col-12">
