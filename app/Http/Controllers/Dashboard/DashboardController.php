@@ -104,14 +104,14 @@ class DashboardController extends Controller
 
   public function merchandise()
   {
-    $mrc=Mrc::orderby('created_at','desc')->paginate(9);
+    $mrc=Mrc::latest()->paginate(9);
      return view('Dashboard/Mrc/mrc',compact('mrc'));
   }
 
 
   public function blog()
   {
-     $posts=Post::orderby('created_at','desc')->paginate(9);
+     $posts=Post::latest()->paginate(9);
    return view('Dashboard/Blog/blog',compact('posts'));
   }
     
