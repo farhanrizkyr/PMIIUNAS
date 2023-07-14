@@ -20,7 +20,7 @@ class StrukturOrganisasiController extends Controller
     }
     public function index()
     {
-      $struktur=StrukturOrganisasi::orderby('created_at','desc')->get();
+      $struktur=StrukturOrganisasi::latest()->get();
         return view ('Struktur/struktur',compact('struktur'));
     }
 
