@@ -50,12 +50,14 @@ $this->middleware('guest')->except('logout');
         ])->onlyInput('username');
     }
 
- public function logout()
+ public function logout(Request $request)
     {
         auth()->guard('kader')->logout();
-        session()->flush();
+        $request->session()->invalidate();
 
-        return redirect()->route('kader.logout');
+    $request->session()->regenerateToken();
+
+    return redirect('/kader/login')->with('pesan','Berhasil logout');
     }
 
 }

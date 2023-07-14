@@ -48,6 +48,7 @@
                        	</div>
                        </form>
 
+
                 </div>
 
             
@@ -56,16 +57,21 @@
               <div class="card-footer">
      <i class="fas fa-clock"></i>    Diupdate:{{Auth::user()->updated_at->DiffForHumans()}}
         </div>
-             
+               
             </div>
-
+             <div class="bio">
+               <label>Tentang Saya:</label>
+                {!!Auth::user()->bio!!}
+             </div>
             <!-- /.card -->
 
             <!-- About Me Box -->
           
             <!-- /.card -->
           </div>
+
           <!-- /.col -->
+
           <div class="col-md-9">
             <div class="card">
                  <div class="card card-primary card-outline">
@@ -83,7 +89,7 @@
                   <button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger"><i class="fas fa-trash"></i> Hapus Akun</button>
                 </form>
                 <br><br>
-                 <h5 style="float:right;"><i class="fas fa-calendar-week"></i> Dibuat: {{Auth::user()->created_at}}</h5>
+                 <h5 style="float:right;"><i class="fas fa-calendar-week"></i> Dibuat: {{Auth::user()->created_at->isoformat('MMMM Y')}}</h5>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
@@ -128,12 +134,7 @@
                         </div>
                       </div>
                    
-                      <div class="form-group row">
-                        <label for="inputSkills" class="col-sm-2 col-form-label">Tentang Saya</label>
-                        <div class="col-sm-10">
-                        <textarea readonly class="form-control" rows="11"  name="bio">{{Auth::user()->bio}}</textarea>
-                        </div>
-                      </div>
+                    
                     
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">

@@ -44,7 +44,7 @@
       <td>{{$data->tahun->tahun}}</td>
       <td>{{$data->progdi->progdi}}</td>
       <td>{!!$data->tempat!!}</td>
-      <td>{{$data->tanggallahir}}</td>
+      <td>{{$data->tanggallahir->isoformat('D MMMM Y')}}</td>
       <td>{{$data->email}}</td>
       <td>{{$data->hp}}</td>
       <td>{!!$data->alamat!!}</td>

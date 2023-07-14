@@ -51,7 +51,7 @@
 
  	<div class="group">
    		<label>Tanggal Lahir</label>
-   		<input type="date" name="tanggallahir" class="form-control" autocomplete="off"  value="{{$data->tanggallahir}}">
+   		<input type="datetime-local" name="tanggallahir" class="form-control" autocomplete="off"  value="{{$data->tanggallahir}}">
    		@error('tanggallahir')
    		<p class="text-danger">{{$message}}</p>
    		@enderror

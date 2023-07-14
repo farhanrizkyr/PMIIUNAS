@@ -16,7 +16,7 @@
   <div class="col lg-5">
   <a href="#" style="font-size:12px; background:lightgrey;" class="btn ">{{$post->category->name}}</a>
     <h1>{{$post->name}}</h1>
-   <br> <i class="bi bi-clock"></i>  {{$post->created_at->isoFormat('D,dddd MMMM Y')}}
+   <br> <i class="bi bi-clock"></i>  {{$post->created_at->isoFormat(' D, MMMM Y')}}
    <br><br><br>
 
   </div>

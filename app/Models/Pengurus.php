@@ -18,4 +18,10 @@ class Pengurus extends Model
      return $this->BelongsTo(Tahun::class);
      }
 
+
+     protected $dates=['tanggallahir'];
+    protected $casts = ['tanggallahir'=>'datetime'];
+
+
+
 }

@@ -50,7 +50,7 @@ Setting-  {{Auth::user()->name}}
                        @if(Auth::user()->status=='disable')
                     Status: <p class="text-danger">Akun DiBlokir</p>
                     @endif
-                  <h6> <i class="fas fa-calendar-week"></i> DiBuat: {{Auth::user()->created_at->format('d/m/y')}}</h6>
+                  <h6> <i class="fas fa-calendar-week"></i> DiBuat: {{Auth::user()->created_at->isoformat('MMMM Y')}}</h6>
                     <h6> <i class="fas fa-clock"></i> DiUpdate: {{Auth::user()->updated_at->diffForHumans()}}</h6>
                   </div>
                 </div>

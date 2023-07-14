@@ -51,7 +51,7 @@
 
 	<div class="group">
 	<label>Tentang Saya</label>
-	<textarea name="bio" class="form-control" rows="12">{{$data->bio}}</textarea>
+	<textarea id="editor1" name="bio" class="form-control" rows="12">{{$data->bio}}</textarea>
 	@error('bio')
     <p class="text-danger">{{$message}}</p>
 	@enderror
