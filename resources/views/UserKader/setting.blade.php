@@ -15,7 +15,7 @@ Setting-  {{Auth::user()->name}}
 
 @if(Auth::user()->status=='disable')
           <div class="alert alert-warning" role="alert">
- <i class="fas fa-info-circle"></i>  Akun Anda Sudah DiBlokir Jika Ingin Membuka Blokir Silahkan Hubungi Panitia
+ <i class="fas fa-info-circle"></i>  Akun Anda Sudah DiBlokir Jika Ingin Membuka Blokir Silahkan Hubungi Pengurus
 </div>
 @endif
           <div class="section-body">

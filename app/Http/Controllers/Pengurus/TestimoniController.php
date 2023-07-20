@@ -151,11 +151,11 @@ class TestimoniController extends Controller
     public function destroy($id)
     {
         $testimoni=Testimoni::find($id);
-        if ($testimoni <> "") {
+        if ($testimoni->gambar <> "") {
          unlink(public_path('FotoTestimoniKader').'/'.$testimoni->gambar);
         }
         $testimoni->delete();
-        return redirect('/testimoni')->with('hapus','Testimoni Berhasil di Hapus');
+        return redirect('/testimoni')->with('pesan','Testimoni Berhasil di Hapus');
         
     }
 }

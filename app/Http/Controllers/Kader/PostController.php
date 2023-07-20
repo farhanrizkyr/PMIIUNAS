@@ -27,14 +27,8 @@ class PostController extends Controller
         $categories=Category::orderby('created_at','desc')->get();
         $kader_id=Auth::user()->id;
       $posts=Post::orderby('created_at','desc')->where('kader_id',auth()->user()->id)->get();
-      if (Auth::user()->status=='active') {
-        return view('Posts/post',compact('posts','categories'));
-      }
-
-        if (Auth::user()->status=='disable') {
-        return view('UserKader/anc');
-      }
-    
+      
+       return view('Posts/post',compact('posts','categories'));
 
     }
 

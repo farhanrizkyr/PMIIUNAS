@@ -19,12 +19,15 @@
                 @if(Auth::user()->status=='active')
                 <li><a class="nav-link"  href="/kader/category"><i class="far fa-circle"></i> Category</a></li>
                 <li><a class="nav-link" href="/kader/artikel"><i class="far fa-circle"></i> Buat Blog</a></li>
-                 <li><a class="nav-link" href="/kader/allposts"><i class="far fa-circle"></i> Semua Postingan Blog</a></li>
+                 <li><a class="nav-link" href="/kader/allposts"><i class="far fa-circle"></i> List Card Blog</a></li>
                    @endif
               </ul>
                <ul class="dropdown-menu">
                 @if(Auth::user()->status=='disable')
-                 <li><a class="nav-link" href="/kader/allposts">Semua Postingan Blog</a></li>
+
+                <li><a class="nav-link" href="/kader/artikel"><i class="far fa-circle"></i> Buat Blog</a></li>
+                 <li><a class="nav-link" href="/kader/allposts"><i class="far fa-circle"></i> List Card Blog</a></li>
+
                    @endif
               </ul>
 

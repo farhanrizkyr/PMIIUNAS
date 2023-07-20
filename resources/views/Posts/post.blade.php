@@ -14,13 +14,28 @@
 <br>
 
 <br><br><br>
+@if(Auth::user()->status=='active')
 <a href="/kader/artikel/tambah_artikel" class="btn btn-primary mb-4"> <i class="fas fa-plus"></i> Tamabah Post</a>
+
+@endif
+
+@if(Auth::user()->status=='disable')
+<button class="btn btn-secondary mb-4" disabled><i class="fas fa-plus "></i> Tambah Post</button>
+
+
+          <div class="alert alert-warning" role="alert">
+ <i class="fas fa-info-circle"></i>  Akun Anda Sudah DiBlokir Jika Ingin Membuka Blokir Silahkan Hubungi Pengurus
+</div>
+@endif
+
+<h1>Post Artikel</h1>
 <div class="table-wrapper card" style="padding:10px;">
   <table id="tabel-data" class="table display">
     <thead>
       <tr>
         <th>No</th>
         <th>Judul</th>
+        <th>Upload Artikel</th>
         <th>Gambar</th>
         <th>Category</th>
         <th>Body</th>
@@ -36,6 +51,7 @@
       <tr>
         <td class="text-center">{{$no++;}} </td>
         <td>{{$data->name}}</td>
+        <td>{{$data->created_at->isoformat('D, MMMM Y')}}</td>
         <td><img width="150" src="{{$data->image()}}" alt="{{$data->image}}"></td>
         <td>{{$data->category->name}}</td>
         <td><a href="/kader/detail/{{$data->slug}}">{!!$body!!}</a></td>
