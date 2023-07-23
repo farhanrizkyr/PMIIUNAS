@@ -38,8 +38,9 @@ Setting-  {{Auth::user()->name}}
                     </div>
                   </div>
                   <div class="profile-widget-description">
+
                     <div class="profile-widget-name">{{Auth::user()->name}} <div class="text-muted d-inline font-weight-normal"><div class="slash"></div> Bio</div></div>
-                  {!!Auth::user()->bio!!}
+                  {!!Auth::user()->bio!!} 
                   </div>
                   <div class="card-footer text-center">
                     <div class="font-weight-bold mb-2">Log Aktivity</div>
@@ -114,15 +115,25 @@ Setting-  {{Auth::user()->name}}
                           </div>
                         </div>
 
-                           <div class="row">
+
+                         <div class="row">
                           <div class="form-group col-md-6 col-12">
-                            <label>Gender</label>
+                            <label> Gender</label>
                             <input type="text" class="form-control" value="{{Auth::user()->gender}}" readonly>
+                            <div class="invalid-feedback">
+                              Please fill in the first name
+                            </div>
+                          </div>
+                          <div class="form-group col-md-6 col-12">
+                            <label>User ID</label>
+                            <input type="text" class="form-control" value="{{Auth::user()->id}}" readonly>
                             <div class="invalid-feedback">
                               Please fill in the last name
                             </div>
                           </div>
                         </div>
+
+                         
 
 
                        

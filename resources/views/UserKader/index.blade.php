@@ -13,7 +13,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title bg">Posts Artilel</h5>
+        <h5 class="card-title bg">Posts Blog/Artikel</h5>
 
         <p class="card-text">{{Auth::user()->posts->count()}}</p>
         <a href="/kader/artikel" ><i class="fas fa-arrow-right"></i> More</a>

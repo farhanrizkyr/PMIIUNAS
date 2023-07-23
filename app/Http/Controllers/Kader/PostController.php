@@ -102,8 +102,14 @@ class PostController extends Controller
      if ($post==false) {
        return view ('Posts/404');
      }
-     return view ('Posts/more',compact('post'));
+
+      if ($post->status=='draft') {
+         return view('UserKader/draft',compact('post'));
+    
     }
+     return view ('Posts/more',compact('post'));
+
+  }
 
     /**
      * Show the form for editing the specified resource.
@@ -177,6 +183,7 @@ class PostController extends Controller
     Post::find($id)->update([
       'kader_id'=>Auth::user()->id,
      'name'=>request()->name,
+     'status'=>request()->status,
      'slug'=>str::slug(request ()->name),
      'body'=>request()->body,
     'category_id'=>request()->category_id,
@@ -187,6 +194,7 @@ class PostController extends Controller
      Post::find($id)->update([
            'kader_id'=>Auth::user()->id,
      'name'=>request()->name,
+      'status'=>request()->status,
      'slug'=>str::slug(request ()->name),
      'body'=>request()->body,
     'category_id'=>request()->category_id,
@@ -217,7 +225,7 @@ class PostController extends Controller
 
     public function all()
     {
-      $all=Post::orderby('created_at','desc')->where('kader_id',auth()->user()->id)->paginate(3);
+      $all=Post::orderby('created_at','desc')->where('kader_id',auth()->user()->id)->where('status','publish')->paginate(3);
      return view('Posts/allposts',compact('all'));
     }
 }

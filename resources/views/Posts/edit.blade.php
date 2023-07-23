@@ -11,6 +11,16 @@
      <p class="text-danger">{{$message}}</p>
       @enderror
     </div>
+
+   <div class="grup">
+      <label for="">Status</label>
+     <select class="js-example-basic-multiple" style="width:100%;" name="status">
+       <option @if($post->status=='publish')selected @endif value="publish">Publish</option>
+        <option @if($post->status=='draft')selected @endif value="draft">Draft</option>
+     </select>
+    </div>
+
+
     <div class="grup">
       <div class="row">
         <div class="col">

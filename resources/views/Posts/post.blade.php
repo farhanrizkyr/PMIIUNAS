@@ -35,6 +35,7 @@
       <tr>
         <th>No</th>
         <th>Judul</th>
+        <th>Status</th>
         <th>Upload Artikel</th>
         <th>Gambar</th>
         <th>Category</th>
@@ -51,6 +52,16 @@
       <tr>
         <td class="text-center">{{$no++;}} </td>
         <td>{{$data->name}}</td>
+        <td>
+          @if($data->status=='publish')
+          <span class="badge badge-success">Publish</span>
+          @endif
+
+
+         @if($data->status=='draft')
+          <span class="badge badge-danger">Draft</span>
+          @endif
+        </td>
         <td>{{$data->created_at->isoformat('D, MMMM Y')}}</td>
         <td><img width="150" src="{{$data->image()}}" alt="{{$data->image}}"></td>
         <td>{{$data->category->name}}</td>
