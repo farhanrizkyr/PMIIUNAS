@@ -28,11 +28,4 @@
 <!-- End card --> 
 </div>
 
-<style>
-  .hero{
-    border-radius:9px;
-    border: solid 2px;
-    border-color:black;
-  }
-</style>
 @endsection

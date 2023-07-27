@@ -2,13 +2,20 @@
 @section('title','Postingan Artikel')
 @section('content')
 @if(Session::get('pesan'))
-<div class="alert alert-primary" role="alert">
-  {{Session::get('pesan')}}
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong>{{Session::get('pesan')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 @endif
+
 @if(Session::get('hapus'))
-<div class="alert alert-danger" role="alert">
-  {{Session::get('hapus')}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{Session::get('hapus')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 @endif
 <br>

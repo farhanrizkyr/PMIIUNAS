@@ -124,15 +124,7 @@ class PostController extends Controller
           if ($post==false) {
          return view('UserKader/404');
       }
-      if (Auth::user()->status=='active') {
-        return view ('Posts/edit',compact('post','categories'));
-
-      }
-
-         if (Auth::user()->status=='disable') {
-        return view ('UserKader/anc');
-
-      }
+       return view ('Posts/edit',compact('post','categories'));
         
     }
 

@@ -118,7 +118,7 @@ class CategoryController extends Controller
     public function update($id)
         {
         request()->validate([
-         'name'=>'required',
+         'name'=>'required|unique:categories',
         ],
         [
          'name.required'=>'Category Wajib Di isi',
