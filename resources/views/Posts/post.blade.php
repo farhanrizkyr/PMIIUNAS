@@ -66,13 +66,13 @@
 
 
          @if($data->status=='draft')
-          <span class="badge badge-danger">Draft</span>
+          <span class="badge badge-danger">UnPublish</span>
           @endif
         </td>
         <td>{{$data->created_at->isoformat('D, MMMM Y')}}</td>
         <td><img width="150" src="{{$data->image()}}" alt="{{$data->image}}"></td>
         <td>{{$data->category->name}}</td>
-        <td><a href="/kader/detail/{{$data->slug}}">{!!$body!!}</a></td>
+        <td><a href="#" data-toggle="modal" data-target="#detail-artikel{{$data->id}}">{!!$body!!}</a></td>
         <td>
       <form method="post" action="/kader/proses_hapus_post/{{$data->id}}" class="d-inline">
             @csrf
@@ -88,6 +88,31 @@
   
 @endforeach
 </div>
+@foreach($posts as $data)
+<div class="modal fade" id="detail-artikel{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-newspaper"></i> Postingan Draft Artikel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <article>
+          <h5>{{$data->name}}</h5>
+          <hr>
+          {!!$data->body!!}
+        </article>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
   </table>
 
    <style>

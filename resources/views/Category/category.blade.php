@@ -53,7 +53,9 @@
           @method('delete')
           <button onclick="return confirm('Yakin Ingin Menghapus Data Category: {{$data->name}}')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
         </form>
-         <a href="/kader/edit_category/{{$data->id}}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</a>
+
+      <a href="#"  data-toggle="modal" data-target="#edit-category{{$data->id}}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</a>
+       
        </td>
      </tr>
    @endforeach
@@ -61,4 +63,44 @@
 </table>
 </div>
 
+<!-- Modal  Edit-->
+  @foreach ($categories as $data)
+<div class="modal fade" id="edit-category{{$data->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit Category </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form method="post" action="/kader/proses_edit_category/{{$data->id}}">
+   @csrf
+    <div class="grup">
+    <label for="">Category</label>
+    <input type="text" name="name" class="form-control" value="{{$data->name}}">
+        @error('name')
+          <p class="text-danger">{{$message}}</p>
+          @enderror
+          <br><br>
+          
+  </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Save</button>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
+<!-- End Edit Category-->
+
 @endsection
+
+
+
+  

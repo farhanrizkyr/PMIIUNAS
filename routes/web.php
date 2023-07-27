@@ -158,7 +158,6 @@ Route::get('/pemberitahuan/{slug}',[PemberitahuanController::class,'show']);
 Route::get('/kader/category',[CategoryController::class,'index']);
 Route::get('/kader/category/tambah_category',[CategoryController::class,'add']);
 Route::post('/kader/proses_tambah_category',[CategoryController::class,'create']);
-Route::get('/kader/edit_category/{id}',[CategoryController::class,'edit']);
 Route::post('/kader/proses_edit_category/{id}',[CategoryController::class,'update']);
 Route::delete('/kader/hapus_category/{id}',[CategoryController::class,'destroy']);
 //===============================Post===================//
