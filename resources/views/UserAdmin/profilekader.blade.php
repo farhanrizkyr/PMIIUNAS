@@ -47,6 +47,11 @@ profile: {{$user->name}}
             <!-- /.card -->
 
             <!-- About Me Box -->
+            <h5>Tentang Saya : </h5>
+
+            <article class="comment more">
+               {!!$user->bio!!}
+            </article>
           
             <!-- /.card -->
           </div>
@@ -148,4 +153,9 @@ profile: {{$user->name}}
     </section>
 
 
+
+
+
+
 @endsection
+

@@ -40,7 +40,12 @@ Setting-  {{Auth::user()->name}}
                   <div class="profile-widget-description">
 
                     <div class="profile-widget-name">{{Auth::user()->name}} <div class="text-muted d-inline font-weight-normal"><div class="slash"></div> Bio</div></div>
-                  {!!Auth::user()->bio!!} 
+                  @if(strlen(Auth::user()->bio)>360)
+                {!!substr(Auth::user()->bio,0,360)!!}
+                <a href="#"  data-toggle="modal" data-target="#data-profile">Tampilan...</a>
+                @else
+                {!!Auth::user()->bio!!}
+                @endif
                   </div>
                   <div class="card-footer text-center">
                     <div class="font-weight-bold mb-2">Log Aktivity</div>
@@ -56,7 +61,7 @@ Setting-  {{Auth::user()->name}}
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-12 col-lg-7">
+              <div class="col">
                 <div class="card">
                   <form method="post" class="needs-validation" novalidate="">
                     <div class="card-header">
@@ -181,5 +186,31 @@ Setting-  {{Auth::user()->name}}
     </div>
   </div>
 </div>
+
+
+
+<!-- detail data -->
+    <div class="modal fade" id="data-profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="exampleModalLabel"><i class="fas"></i> Detail Bio Saya</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="table-responsive">
+         {!!Auth::user()->bio!!}
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times-circle"></i> Close</button>
+        
+      </div>
+    </div>
+  </div>
+  <!--End detail data -->
+
 
 @endsection

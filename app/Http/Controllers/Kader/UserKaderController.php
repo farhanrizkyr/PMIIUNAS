@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kader;
 use Auth;
+use Illuminate\Support\Carbon;
 class UserKaderController extends Controller
 {
-        public function __construct()
+  public function __construct()
 {
    $this->middleware('auth:kader');
 }
@@ -16,7 +17,8 @@ class UserKaderController extends Controller
 
     public function index()
     {
-        return view('UserKader/index');
+     $waktu=Carbon::now();
+        return view('UserKader/index',compact('waktu'));
     }
 
        public function profile()

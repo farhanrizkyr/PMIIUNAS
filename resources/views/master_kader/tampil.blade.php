@@ -121,7 +121,8 @@ CKEDITOR.replace( 'editor2' );
     $('.js-example-basic-multiple').select2();
 });
 </script>
-  <!-- Page Specific JS File -->
+
+
 
 </body>
 </html>

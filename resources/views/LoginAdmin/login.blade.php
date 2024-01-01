@@ -38,7 +38,7 @@
             @endif
        <h3 class="text-center"> <i class="fas fa-cog"></i> PMIIUNAS</h3>
       <p class="login-box-msg">Back Office <br>
-        Web PMII Komisariat Universitas Nasional
+        Web Application PMII Komisariat Universitas Nasional
        </p>
 
 
@@ -79,7 +79,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-sign-in-alt"></i> Login</button>
           </div>
           <!-- /.col -->
         </div>
