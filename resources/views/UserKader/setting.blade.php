@@ -42,7 +42,7 @@ Setting-  {{Auth::user()->name}}
                     <div class="profile-widget-name">{{Auth::user()->name}} <div class="text-muted d-inline font-weight-normal"><div class="slash"></div> Bio</div></div>
                   @if(strlen(Auth::user()->bio)>360)
                 {!!substr(Auth::user()->bio,0,360)!!}
-                <a href="#"  data-toggle="modal" data-target="#data-profile">Tampilan...</a>
+                <a href="#" style="text-decoration:none;"  data-toggle="modal" data-target="#detail-bio">Tampilkan...</a>
                 @else
                 {!!Auth::user()->bio!!}
                 @endif
@@ -145,7 +145,7 @@ Setting-  {{Auth::user()->name}}
                   
                     <div class="card-footer text-right">
                      <a href="/user-profile/{{Auth::user()->username}}" class="btn btn-primary"><i class="fas fa-edit"></i> Edit </a>
-                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                     <button type="button" style="background:salmon;" class="btn" data-toggle="modal" data-target="#exampleModal">
                    <i class="fas fa-user-edit"></i> Change Avatar
                   </button>
                     </div>
@@ -190,11 +190,11 @@ Setting-  {{Auth::user()->name}}
 
 
 <!-- detail data -->
-    <div class="modal fade" id="data-profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="detail-bio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header bg-primary">
-        <h5 class="modal-title text-white" id="exampleModalLabel"><i class="fas"></i> Detail Bio Saya</h5>
+        <h5 class="modal-title text-white" id="exampleModalLabel"><i class="fas fa-user"></i> Detail Bio Saya :</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
