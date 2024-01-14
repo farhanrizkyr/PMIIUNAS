@@ -71,7 +71,9 @@
         </td>
         <td>{{$data->created_at->isoformat('D, MMMM Y')}}</td>
         <td><img width="150" src="{{$data->image()}}" alt="{{$data->image}}"></td>
-        <td>{{$data->category->name}}</td>
+        <td>
+            {{optional($data->category)->name??null}}
+          </td>
         <td><a href="#" data-toggle="modal" data-target="#detail-artikel{{$data->id}}">{!!$body!!}</a></td>
         <td>
       <form method="post" action="/kader/proses_hapus_post/{{$data->id}}" class="d-inline">

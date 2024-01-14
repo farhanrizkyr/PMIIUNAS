@@ -29,4 +29,6 @@ class Post extends Model
      }
       return asset('Posts/'.$this->image);
    }
+
+  
 }

@@ -39,7 +39,9 @@
     <div class="grup">
       <label for="">Category</label>
       <select  id="category_id" class="js-example-basic-multiple" name="category_id"style="width:100%;">
+        @if(optional($post->category)->name??null)
         <option value="{{$post->category_id}}">{{$post->category->name}}</option>
+        @endif
         @foreach($categories as $category)
        <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
