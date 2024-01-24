@@ -72,7 +72,9 @@
         <td>{{$data->created_at->isoformat('D, MMMM Y')}}</td>
         <td><img width="150" src="{{$data->image()}}" alt="{{$data->image}}"></td>
         <td>
+            <span class="badge badge-primary">
             {{optional($data->category)->name??null}}
+            </span>
           </td>
         <td><a href="#" data-toggle="modal" data-target="#detail-artikel{{$data->id}}">{!!$body!!}</a></td>
         <td>
