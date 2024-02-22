@@ -24,7 +24,7 @@ class PostController extends Controller
 }
     public function index()
     {
-        $categories=Category::with('category')->latest()->get();
+        $categories=Category::latest()->get();
         $kader_id=Auth::user()->id;
       $posts=Post::orderby('created_at','desc')->where('kader_id',auth()->user()->id)->get();
       
