@@ -79,7 +79,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2020/{{date('Y')}} <div class="bullet"></div> Design By <a href="https://www.instagram.com/pmiiunas/?hl=id">PMII Komisariat Universitas Nasional</a>
+          Copyright &copy; 2020/{{date('Y')}} <div class="bullet"></div> Design By <a href="https://www.instagram.com/pmiiunas/?hl=id">PMII Komisariat Universitas Nasional Developers</a>
         </div>
         <div class="footer-right">
      

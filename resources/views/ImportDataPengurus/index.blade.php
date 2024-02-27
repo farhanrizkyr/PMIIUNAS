@@ -22,8 +22,7 @@
         <th>Nama</th>
         <th>Tahun Angkatan</th>
         <th>Fakultas/Program Studi</th>
-        <th>Tempat</th>
-        <th>Tanggal Lahir</th>
+        <th>Tempat/Tanggal Lahir</th>
         <th>E-mail</th>
         <th>Hp</th>
         <th>Alamat</th>
@@ -36,10 +35,9 @@
       <tr>
       <th class="text-center">{{$no++;}}</th>
       <td>{{$data->nama}}</td>
-      <td>{{$data->tahun->tahun}}</td>
-      <td>{{$data->progdi->progdi}}</td>
-      <td>{!!$data->tempat!!}</td>
-      <td>{{$data->tanggallahir}}</td>
+      <td>{{optional($data->tahun)->tahun??null}}</td>
+      <td>{{optional($data->progdi)->progdi??null}}</td>
+      <td>{!!$data->tempat!!} <b>{{Carbon\Carbon::parse($data->tanggallahir)->isoformat('D, MMMM Y')}}</b></td>
       <td>{{$data->email}}</td>
       <td>{{$data->hp}}</td>
       <td>{!!$data->alamat!!}</td>

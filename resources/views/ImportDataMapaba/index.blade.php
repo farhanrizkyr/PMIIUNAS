@@ -35,8 +35,8 @@
             <th>{{$no++;}}</th>
             <td>{{$list->name}}</td>
             <td>{{$list->kampus}}</td>
-            <td>{{$list->tahun->tahun}}</td>
-            <td>{{$list->progdi->progdi}}</td>
+            <td>{{optional($list->tahun)->tahun??null}}</td>
+            <td>{{optional($list->progdi)->progdi??null}}</td>
             <td>{{$list->hp}}</td>
             <td><a href="history-datamapaba/edit-arsip/{{$list->id}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i> Edit</a>
 

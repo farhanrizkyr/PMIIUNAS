@@ -112,6 +112,7 @@ Route::get('/tahun',[TahunController::class,'index']);
 Route::get('/tahun/add',[TahunController::class,'create']);
 Route::post('/tahun/proses_tambah_tahun',[TahunController::class,'store']);
 Route::get('/tahun/edit_tahun/{id}',[TahunController::class,'edit']);
+Route::delete('/tahun/delete-tahun-angkatan/{id}',[TahunController::class,'destroy']);
 Route::post('/tahun/proses_edit_tahun/{id}',[TahunController::class,'update']);
 //================================Mrc===================//
 Route::get('/merchandise',[MrcController::class,'index']);
@@ -142,6 +143,7 @@ Route::get('/testimoni/edit_testi/{id}',[TestimoniController::class,'edit']);
 Route::post('/testimoni/proses_edit_testi/{id}',[TestimoniController::class,'update']);
 //================================Progdi===================//
 Route::get('/progdi',[ProgdiController::class,'index']);
+Route::delete('/progdi/delete-progdi/{id}',[ProgdiController::class,'destroy']);
 Route::get('/progdi/add',[ProgdiController::class,'create']);
 Route::post('/progdi/proses_tambah_progdi',[ProgdiController::class,'store']);
 Route::get('/progdi/edit_progdi/{id}',[ProgdiController::class,'edit']);

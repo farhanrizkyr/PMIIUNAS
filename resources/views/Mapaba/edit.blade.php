@@ -39,7 +39,7 @@
     <div class="grup">
     <label for="">Tahun Angkatan</label>
     <select style="width:100%;"  class="js-example-basic-single" name="tahun_id">
-      <option value="{{$m->tahun_id}}">{{$m->tahun->tahun}}</option>
+      <option value="{{$m->tahun_id}}">{{optional($m->tahun)->tahun?? null}}</option>
       @foreach($t as $d)
    <option value="{{$d->id}}">{{$d->tahun}}</option>
       @endforeach
@@ -53,7 +53,7 @@
   <div class="grup">
     <label for="">Program Studi</label>
     <select  style="width:100%;"  class="js-example-basic-single"name="progdi_id">
-      <option value="{{$m->progdi_id}}">{{$m->progdi->progdi}}</option>
+      <option value="{{$m->progdi_id}}">{{optional($m->progdi)->progdi?? null}}</option>
       @foreach($p as $d)
    <option value="{{$d->id}}">{{$d->progdi}}</option>
       @endforeach

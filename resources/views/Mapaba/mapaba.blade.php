@@ -65,8 +65,8 @@ class="fas fa-sync-alt"></i></button>
             <td>{{$no++;}}</td>
             <td>{{$datas->name}}</td>
             <td>{{$datas->kampus}}</td>
-            <td>{{$datas->tahun->tahun}}</td>
-           <td>{{$datas->progdi->progdi}}</td>
+            <td>{{optional($datas->tahun)->tahun??null}}</td>
+           <td>{{optional($datas->progdi)->progdi??null}}</td>
             <td>{{$datas->hp}}</td>
             <td><a href="listmapaba/sub/{{$datas->slug}}">{!!$p!!}</a></td>
            <td><a href="listmapaba/m/{{$datas->slug}}">{!!$m!!}</a></td>

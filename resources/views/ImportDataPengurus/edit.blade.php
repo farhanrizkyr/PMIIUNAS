@@ -15,7 +15,7 @@
      <div class="grup">
     <label for="">Tahun Angkatan</label>
     <select class="js-example-basic-single" name="tahun_id" style="width:100%;">
-      <option value="{{$data->tahun_id}}">{{$data->tahun->tahun}}</option>
+      <option value="{{$data->tahun_id}}">{{optional($data->tahun)->tahun??null}}</option>
       @foreach($t as $d)
    <option value="{{$d->id}}">{{$d->tahun}}</option>
       @endforeach
@@ -29,7 +29,7 @@
   <div class="grup">
     <label for="">Fakultas/Program Studi</label>
     <select class="js-example-basic-single" name="progdi_id" style="width:100%;">
-      <option value="{{$data->progdi_id}}">{{$data->progdi->progdi}}</option>
+      <option value="{{$data->progdi_id}}">{{optional($data->progdi)->progdi??null}}</option>
       @foreach($p as $d)
    <option value="{{$d->id}}">{{$d->progdi}}</option>
       @endforeach
@@ -89,7 +89,7 @@
     
     Save
   </button>
-  <a href="/listpengurus" class="btn btn-warning">
+  <a href="/history-datapengurus" class="btn btn-warning">
     <i class="fas fa-arrow-alt-circle-left"></i>
     back
   </a>

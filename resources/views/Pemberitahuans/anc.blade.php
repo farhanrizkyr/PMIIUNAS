@@ -25,6 +25,7 @@
       <tr>
         <th>No</th>
         <th>Judul pemberitahuan</th>
+        <th>Tanggal Upload</th>
         <th>Gambar</th>
         <th>Body</th>
         <th>Aksi</th>
@@ -40,6 +41,7 @@
       <tr>
         <td>{{$no++;}}</td>
         <td>{{$data->judulpem}}</td>
+        <td>{{$data->created_at->isoformat('dddd D, MMMM Y')}}</td>
         <td><img width="160" src="{{$data->gambar()}}" alt="{{$data->gambar}}"></td>
         <td><a href="/pemberitahuan/{{$data->slug}}">{!!$body!!}</a></td>
         <td>

@@ -19,8 +19,6 @@ class Pengurus extends Model
      }
 
 
-     protected $dates=['tanggallahir'];
-    protected $casts = ['tanggallahir'=>'datetime'];
 
 
 

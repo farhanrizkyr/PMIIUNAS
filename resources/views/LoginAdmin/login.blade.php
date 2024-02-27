@@ -85,7 +85,7 @@
         </div>
       </form>
       <p class="mb-2 mt-4 text-center">Design and constructed by 
-                            <a>PMII © Komisariat Universitas Nasional</a>- {{date('Y')}} All Right Reserved
+                            <a>PMII © Komisariat Universitas Nasional Developers</a>- {{date('Y')}} All Right Reserved
                         </p>
 
     

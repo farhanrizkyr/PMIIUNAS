@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Kader;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Auth;
-use storage;
+use Illuminate\Support\Facades\File;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -166,8 +166,15 @@ class PostController extends Controller
     'image.max'=>'Ukuran Gambar Harus 2MB',
     'body.required'=>'Wajib Di isi',
     ]);
+
+
     
-    if (request ()->image <> '') {
+    if (request()->file('image') ) {
+
+      $old_image='public/Posts/'.request()->image;
+      if (File::exists($old_image)) {
+       File::delete($old_image);
+      }
       $file=request ()->file('image');
     $filename=$file->getClientOriginalName();
     $file->move(public_path('Posts'),$filename);
@@ -181,8 +188,14 @@ class PostController extends Controller
     'category_id'=>request()->category_id,
     'image'=>$filename,
       ]);
-        storage::delete ('image');
-    } else {
+
+   
+     
+       
+    }
+  
+
+     else {
      Post::find($id)->update([
            'kader_id'=>Auth::user()->id,
      'name'=>request()->name,

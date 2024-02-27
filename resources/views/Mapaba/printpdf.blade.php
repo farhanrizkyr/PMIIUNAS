@@ -65,8 +65,8 @@
             <td class="text-center">{{$no++;}}</td>
             <td>{{$mapaba->name}}</td>
             <td>{{$mapaba->kampus}}</td>
-            <td>{{$mapaba->tahun->tahun}}</td>
-            <td>{{$mapaba->progdi->progdi}}</td>
+            <td>{{optional($mapaba->tahun)->tahun??null}}</td>
+            <td>{{optional($mapaba->progdi)->progdi??null}}</td>
             <td>{{$mapaba->hp}}</td>
             <td>{!!$mapaba->pengalaman!!}</td>
             <td>{!!$mapaba->minat!!}</td>

@@ -165,7 +165,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b>2.0
     </div>
-    <strong>Copyright &copy; 2020-{{date ('Y')}} <a href="https://www.instagram.com/pmiiunas/?hl=id">PMII UNIVERSITAS NASIONAL</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2020-{{date ('Y')}} <a href="https://www.instagram.com/pmiiunas/?hl=id">PMII UNIVERSITAS NASIONAL Developers</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

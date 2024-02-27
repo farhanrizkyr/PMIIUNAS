@@ -29,7 +29,6 @@
         <th>Harga</th>
         <th>Status</th>
         <th>Cp</th>
-        <th>Description</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -78,7 +77,6 @@
           
        <td><a href="https://wa.me/{{$data->cp}}" target="_blank">{{$data->cp}}</a></td>
         </td>
-        <td>{!!$data->desc!!}</td>
         <td>
 
             <form action="/merchandise/hapus_mrc/{{$data->id}}" method="post" class="d-inline">
