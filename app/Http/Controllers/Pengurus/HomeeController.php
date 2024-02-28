@@ -10,7 +10,6 @@ use App\Models\Mapaba;
 use App\Models\Slider;
 use App\Models\Sig;
 use App\Models\User;
-use App\Models\Testimoni;
 class HomeeController extends Controller
 {
    
@@ -27,7 +26,6 @@ class HomeeController extends Controller
     {
       $m=DB::table('mrc')->count();
       $p=DB::table('progdis')->count();
-      $t=DB::table('testimonis')->count();
       $i=DB::table('sigs')->count();
       $a=DB::table('pemberitahuan')->count();
       $s=DB::table('sliders')->count();
@@ -35,6 +33,6 @@ class HomeeController extends Controller
       $ma=Mapaba::where('archive','not')->count();
        $ap=Mapaba::where('archive','approve')->count();
       $k=DB::table('kaders')->count();
-      return view ('Home/home',compact('m','ma','s','i','t','p','a','u','k','ap'));
+      return view ('Home/home',compact('m','ma','s','i','p','a','u','k','ap'));
     }
 }

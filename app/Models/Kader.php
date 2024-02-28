@@ -54,6 +54,12 @@ class Kader extends Authenticatable
       return $this->hasMany(Post::class);
    }
 
+   public function afirasis()
+   {
+        return $this->hasMany(Afirasi::class);
+   }
+
+
    public function ubahstatus($id,$data)
    {
        return DB::table('kaders')

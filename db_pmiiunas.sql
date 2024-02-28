@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jul 2023 pada 06.07
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.1.17
+-- Generation Time: Feb 28, 2024 at 04:29 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `categories`
+-- Table structure for table `afirasis`
+--
+
+CREATE TABLE `afirasis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kader_id` bigint(20) UNSIGNED NOT NULL,
+  `catatan` longtext NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -38,7 +52,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -54,7 +68,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `file_arsip_mapabas`
+-- Table structure for table `file_arsip_mapabas`
 --
 
 CREATE TABLE `file_arsip_mapabas` (
@@ -68,7 +82,7 @@ CREATE TABLE `file_arsip_mapabas` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `file_arsip_penguruses`
+-- Table structure for table `file_arsip_penguruses`
 --
 
 CREATE TABLE `file_arsip_penguruses` (
@@ -82,7 +96,7 @@ CREATE TABLE `file_arsip_penguruses` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jobs`
+-- Table structure for table `jobs`
 --
 
 CREATE TABLE `jobs` (
@@ -98,7 +112,7 @@ CREATE TABLE `jobs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kaders`
+-- Table structure for table `kaders`
 --
 
 CREATE TABLE `kaders` (
@@ -121,7 +135,7 @@ CREATE TABLE `kaders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `kaders`
+-- Dumping data for table `kaders`
 --
 
 INSERT INTO `kaders` (`id`, `name`, `username`, `gender`, `rayon`, `tempat`, `tl`, `bio`, `status`, `avatar`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -131,7 +145,7 @@ INSERT INTO `kaders` (`id`, `name`, `username`, `gender`, `rayon`, `tempat`, `tl
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mapabas`
+-- Table structure for table `mapabas`
 --
 
 CREATE TABLE `mapabas` (
@@ -152,7 +166,7 @@ CREATE TABLE `mapabas` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -162,7 +176,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -189,12 +203,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (21, '2023_01_18_223944_create_penguruses_table', 1),
 (22, '2023_02_07_234600_create_profile_p_m_i_i_u_n_a_s_table', 1),
 (23, '2023_02_09_223829_create_sejarah_p_m_i_i_s_table', 1),
-(24, '2023_03_31_092140_create_sarans_table', 1);
+(24, '2023_03_31_092140_create_sarans_table', 1),
+(25, '2024_02_28_100450_create_afirasis_table', 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mrc`
+-- Table structure for table `mrc`
 --
 
 CREATE TABLE `mrc` (
@@ -214,7 +229,7 @@ CREATE TABLE `mrc` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -226,7 +241,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pemberitahuan`
+-- Table structure for table `pemberitahuan`
 --
 
 CREATE TABLE `pemberitahuan` (
@@ -242,7 +257,7 @@ CREATE TABLE `pemberitahuan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penguruses`
+-- Table structure for table `penguruses`
 --
 
 CREATE TABLE `penguruses` (
@@ -263,7 +278,7 @@ CREATE TABLE `penguruses` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -282,7 +297,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -301,7 +316,7 @@ CREATE TABLE `posts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `profile_p_m_i_i_u_n_a_s`
+-- Table structure for table `profile_p_m_i_i_u_n_a_s`
 --
 
 CREATE TABLE `profile_p_m_i_i_u_n_a_s` (
@@ -313,7 +328,7 @@ CREATE TABLE `profile_p_m_i_i_u_n_a_s` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `profile_p_m_i_i_u_n_a_s`
+-- Dumping data for table `profile_p_m_i_i_u_n_a_s`
 --
 
 INSERT INTO `profile_p_m_i_i_u_n_a_s` (`id`, `judul`, `profile`, `created_at`, `updated_at`) VALUES
@@ -322,7 +337,7 @@ INSERT INTO `profile_p_m_i_i_u_n_a_s` (`id`, `judul`, `profile`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `profile_rayons`
+-- Table structure for table `profile_rayons`
 --
 
 CREATE TABLE `profile_rayons` (
@@ -338,7 +353,7 @@ CREATE TABLE `profile_rayons` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `progdis`
+-- Table structure for table `progdis`
 --
 
 CREATE TABLE `progdis` (
@@ -351,7 +366,7 @@ CREATE TABLE `progdis` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sarans`
+-- Table structure for table `sarans`
 --
 
 CREATE TABLE `sarans` (
@@ -366,7 +381,7 @@ CREATE TABLE `sarans` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sejarah_p_m_i_i_s`
+-- Table structure for table `sejarah_p_m_i_i_s`
 --
 
 CREATE TABLE `sejarah_p_m_i_i_s` (
@@ -378,7 +393,7 @@ CREATE TABLE `sejarah_p_m_i_i_s` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `sejarah_p_m_i_i_s`
+-- Dumping data for table `sejarah_p_m_i_i_s`
 --
 
 INSERT INTO `sejarah_p_m_i_i_s` (`id`, `judul`, `profile`, `created_at`, `updated_at`) VALUES
@@ -387,7 +402,7 @@ INSERT INTO `sejarah_p_m_i_i_s` (`id`, `judul`, `profile`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sigs`
+-- Table structure for table `sigs`
 --
 
 CREATE TABLE `sigs` (
@@ -410,7 +425,7 @@ CREATE TABLE `sigs` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sliders`
+-- Table structure for table `sliders`
 --
 
 CREATE TABLE `sliders` (
@@ -426,7 +441,7 @@ CREATE TABLE `sliders` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `struktur_organisasis`
+-- Table structure for table `struktur_organisasis`
 --
 
 CREATE TABLE `struktur_organisasis` (
@@ -445,7 +460,7 @@ CREATE TABLE `struktur_organisasis` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tahuns`
+-- Table structure for table `tahuns`
 --
 
 CREATE TABLE `tahuns` (
@@ -458,22 +473,7 @@ CREATE TABLE `tahuns` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `testimonis`
---
-
-CREATE TABLE `testimonis` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` text NOT NULL,
-  `gambar` varchar(255) DEFAULT NULL,
-  `catatan` text NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -494,7 +494,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `role`, `username`, `gender`, `biro`, `bio`, `avatar`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -505,82 +505,88 @@ INSERT INTO `users` (`id`, `name`, `role`, `username`, `gender`, `biro`, `bio`, 
 --
 
 --
--- Indeks untuk tabel `categories`
+-- Indexes for table `afirasis`
+--
+ALTER TABLE `afirasis`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indeks untuk tabel `file_arsip_mapabas`
+-- Indexes for table `file_arsip_mapabas`
 --
 ALTER TABLE `file_arsip_mapabas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `file_arsip_penguruses`
+-- Indexes for table `file_arsip_penguruses`
 --
 ALTER TABLE `file_arsip_penguruses`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `jobs`
+-- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `jobs_queue_index` (`queue`);
 
 --
--- Indeks untuk tabel `kaders`
+-- Indexes for table `kaders`
 --
 ALTER TABLE `kaders`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `kaders_email_unique` (`email`);
 
 --
--- Indeks untuk tabel `mapabas`
+-- Indexes for table `mapabas`
 --
 ALTER TABLE `mapabas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `mrc`
+-- Indexes for table `mrc`
 --
 ALTER TABLE `mrc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `pemberitahuan`
+-- Indexes for table `pemberitahuan`
 --
 ALTER TABLE `pemberitahuan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `penguruses`
+-- Indexes for table `penguruses`
 --
 ALTER TABLE `penguruses`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -588,222 +594,216 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indeks untuk tabel `posts`
+-- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `profile_p_m_i_i_u_n_a_s`
+-- Indexes for table `profile_p_m_i_i_u_n_a_s`
 --
 ALTER TABLE `profile_p_m_i_i_u_n_a_s`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `profile_rayons`
+-- Indexes for table `profile_rayons`
 --
 ALTER TABLE `profile_rayons`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `progdis`
+-- Indexes for table `progdis`
 --
 ALTER TABLE `progdis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sarans`
+-- Indexes for table `sarans`
 --
 ALTER TABLE `sarans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sejarah_p_m_i_i_s`
+-- Indexes for table `sejarah_p_m_i_i_s`
 --
 ALTER TABLE `sejarah_p_m_i_i_s`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sigs`
+-- Indexes for table `sigs`
 --
 ALTER TABLE `sigs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sliders`
+-- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `struktur_organisasis`
+-- Indexes for table `struktur_organisasis`
 --
 ALTER TABLE `struktur_organisasis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tahuns`
+-- Indexes for table `tahuns`
 --
 ALTER TABLE `tahuns`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `testimonis`
---
-ALTER TABLE `testimonis`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `categories`
+-- AUTO_INCREMENT for table `afirasis`
+--
+ALTER TABLE `afirasis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `file_arsip_mapabas`
+-- AUTO_INCREMENT for table `file_arsip_mapabas`
 --
 ALTER TABLE `file_arsip_mapabas`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `file_arsip_penguruses`
+-- AUTO_INCREMENT for table `file_arsip_penguruses`
 --
 ALTER TABLE `file_arsip_penguruses`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `jobs`
+-- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `kaders`
+-- AUTO_INCREMENT for table `kaders`
 --
 ALTER TABLE `kaders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `mapabas`
+-- AUTO_INCREMENT for table `mapabas`
 --
 ALTER TABLE `mapabas`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `mrc`
+-- AUTO_INCREMENT for table `mrc`
 --
 ALTER TABLE `mrc`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `pemberitahuan`
+-- AUTO_INCREMENT for table `pemberitahuan`
 --
 ALTER TABLE `pemberitahuan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `penguruses`
+-- AUTO_INCREMENT for table `penguruses`
 --
 ALTER TABLE `penguruses`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `posts`
+-- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `profile_p_m_i_i_u_n_a_s`
+-- AUTO_INCREMENT for table `profile_p_m_i_i_u_n_a_s`
 --
 ALTER TABLE `profile_p_m_i_i_u_n_a_s`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `profile_rayons`
+-- AUTO_INCREMENT for table `profile_rayons`
 --
 ALTER TABLE `profile_rayons`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `progdis`
+-- AUTO_INCREMENT for table `progdis`
 --
 ALTER TABLE `progdis`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `sarans`
+-- AUTO_INCREMENT for table `sarans`
 --
 ALTER TABLE `sarans`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `sejarah_p_m_i_i_s`
+-- AUTO_INCREMENT for table `sejarah_p_m_i_i_s`
 --
 ALTER TABLE `sejarah_p_m_i_i_s`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `sigs`
+-- AUTO_INCREMENT for table `sigs`
 --
 ALTER TABLE `sigs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `sliders`
+-- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `struktur_organisasis`
+-- AUTO_INCREMENT for table `struktur_organisasis`
 --
 ALTER TABLE `struktur_organisasis`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tahuns`
+-- AUTO_INCREMENT for table `tahuns`
 --
 ALTER TABLE `tahuns`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `testimonis`
---
-ALTER TABLE `testimonis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

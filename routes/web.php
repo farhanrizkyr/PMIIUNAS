@@ -3,13 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Kader\CategoryController;
 use App\Http\Controllers\Kader\PostController;
+use App\Http\Controllers\Kader\AfirasiController;
 use App\Http\Controllers\Pengurus\HomeeController;
 use App\Http\Controllers\Pengurus\TahunController;
 use App\Http\Controllers\Pengurus\ProgdiController;
 use App\Http\Controllers\Pengurus\PemberitahuanController;
 use App\Http\Controllers\Pengurus\MrcController;
 use App\Http\Controllers\Pengurus\SliderController;
-use App\Http\Controllers\Pengurus\TestimoniController;
 use App\Http\Controllers\Pengurus\SigController;
 use App\Http\Controllers\Pengurus\FileArsipPengurusController;
 use App\Http\Controllers\Pengurus\FileArsipMapabaController;
@@ -134,13 +134,6 @@ Route::get('/listsig',[SigController::class,'index']);
 Route::delete('/listsig/hapus_peserta_sig/{id}',[SigController::class,'destroy']);
 Route::get('/listsig/edit_peserta_sig/{id}',[SigController::class,'edit']);
 Route::post('/listsig/proses_edit_peserta/{id}',[SigController::class,'update']);
-//================================Testimoni===================//
-Route::get('/testimoni',[TestimoniController::class,'index']);
-Route::get('/testimoni/add',[TestimoniController::class,'create']);
-Route::post('/testimoni/proses_tambah_testi',[TestimoniController::class,'store']);
-Route::delete('/testimoni/hapus_testi/{id}',[TestimoniController::class,'destroy']);
-Route::get('/testimoni/edit_testi/{id}',[TestimoniController::class,'edit']);
-Route::post('/testimoni/proses_edit_testi/{id}',[TestimoniController::class,'update']);
 //================================Progdi===================//
 Route::get('/progdi',[ProgdiController::class,'index']);
 Route::delete('/progdi/delete-progdi/{id}',[ProgdiController::class,'destroy']);
@@ -240,3 +233,8 @@ Route::post('/password/ubah_password_kader',[ChangePasswordKaderController::clas
 //==============================Saran===================//
 Route::get('/saran',[SaranController::class,'index']);
 Route::delete('/saran/hapus/{id}',[SaranController::class,'destroy']);
+//==============================Saran===================//
+Route::get('/kader/testimoni',[AfirasiController::class,'index']);
+Route::post('/kader/create-testimoni',[AfirasiController::class,'create']);
+Route::get('/kader/testimoni/edit-testimoni/{id}',[AfirasiController::class,'edit']);
+Route::post('/kader/proses-edit-testimoni/{id}',[AfirasiController::class,'proses_edit']);

@@ -29,8 +29,11 @@
                  <li><a class="nav-link" href="/kader/allposts"><i class="far fa-circle"></i> List Card Blog</a></li>
 
                    @endif
+
               </ul>
 
+                    <li class="menu-header">Testimoni</li>
+             <li><a class="nav-link" href="/kader/testimoni"><i class="fas fa-users"></i> <span>Buat Testimoni</span></a></li>
 
             </li>
                    
