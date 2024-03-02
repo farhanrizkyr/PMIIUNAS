@@ -5,6 +5,11 @@
 @section('content')
 <form method="post"action="/strukturs/proses_edit_pengurus/{{$d->id}}" enctype="multipart/form-data">
   @csrf
+ 
+    <div class="grup"> 
+    <input  type="text" name="gambar_lama" class="form-control" value="{{$d->gambar}}">
+  </div>
+
   <div class="grup">
     <label for="">Nama</label>
     <input autocomplete="off" type="text" name="name" class="form-control" value="{{$d->name}}">

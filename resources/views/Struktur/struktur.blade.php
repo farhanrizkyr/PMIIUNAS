@@ -27,7 +27,7 @@
   <br><br>
  
 <div class="table-wrapper">
-  <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
+  <table id="tabel-struktur" class="table table-striped table-bordered" width="100%" cellspacing="0">
         <thead>
             <tr>
                 <th>No</th>
@@ -48,7 +48,7 @@
             @foreach($struktur as $data)
             <td>{{$no++;}}</td>
             <td>{{$data->name}}</td>
-            <td><img width="100" class="rounded-circle" src="{{url('FotoStruktur',$data->gambar)}}" alt="{{$data->gambar}}"></td>
+            <td><img width="100"  src="{{url('FotoStruktur',$data->gambar)}}" alt="{{$data->gambar}}"></td>
             <td>
               @if($data->tw==null)
               <p class="text-danger">Tidak diinput </p>

@@ -175,7 +175,7 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- jQuery -->
 <script src="{{asset('v_admin')}}/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -204,7 +204,6 @@ CKEDITOR.replace( 'editor2' );
 } );
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
   $(document).ready(function() {
     $('.js-example-basic-single').select2();

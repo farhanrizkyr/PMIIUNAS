@@ -113,8 +113,11 @@ class FileArsipMapabaController extends Controller
         $file->move(public_path('FileArsipMAPABA'),$filename);
       FileArsipMapaba::find($id)->update([
       'name'=>request()->name, 
-      'file'=>$filename
-      ]); 
+      'file'=>$filename,
+      ]);
+      if (request()->file_lama) {
+          unlink(public_path('FileArsipMAPABA').'/'.request()->file_lama);
+      }
         } else {
        FileArsipMapaba::find($id)->update([
       'name'=>request()->name,

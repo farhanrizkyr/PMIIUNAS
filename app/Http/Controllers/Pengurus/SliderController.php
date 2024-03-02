@@ -126,7 +126,12 @@ class SliderController extends Controller
      'links'=>request()->links,
      'gambar'=>$filename,
      ]);
-     } else {
+
+      if (request()->gambar_lama) {
+         unlink(public_path('Slider').'/'.request()->gambar_lama);
+       } 
+     }
+      else {
        Slider::find($id)->update ([
      'name'=>request()->name,
      'slug'=>str::slug(request ()->name),

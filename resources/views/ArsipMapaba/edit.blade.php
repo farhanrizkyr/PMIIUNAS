@@ -5,6 +5,7 @@
 @section('content')
 <form  method="post" action="/filearsipmapabaraya/proses_edit_file_mapaba/{{$file->id}}" enctype="multipart/form-data">
   @csrf
+  <input type="hidden" name="file_lama" value="{{$file->file}}">
   <div class="grup">
     <label for="">Periode Kepengurusan</label>
     <input name="name" autocomplete="off" type="text" value="{{$file->name}}" class="form-control">

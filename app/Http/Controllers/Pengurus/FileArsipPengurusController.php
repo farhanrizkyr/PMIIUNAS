@@ -115,7 +115,11 @@ class FileArsipPengurusController extends Controller
       FileArsipPengurus::find($id)->update([
       'name'=>request()->name, 
       'file'=>$filename
-      ]); 
+      ]);
+
+      if (request()->file_lama) {
+         unlink(public_path('FileArsipPengurus').'/'.request()->file_lama);
+       } 
         } else {
        FileArsipPengurus::find($id)->update([
       'name'=>request()->name,

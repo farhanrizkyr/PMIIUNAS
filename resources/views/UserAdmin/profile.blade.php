@@ -36,7 +36,6 @@
                         @endif
                        <br><br>
                        <form action="/user/update_avatar/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
-                        @csrf
                        	<div class="group">
                        		<label>Photo Profile</label>
                        		<input type="file" name="avatar" class="form-control">

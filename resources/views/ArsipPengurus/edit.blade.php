@@ -5,6 +5,7 @@
 @section('content')
 <form  method="post" action="/filearsipkomi/proses_edit_file_pengurus/{{$file->id}}" enctype="multipart/form-data">
   @csrf
+    <input type="hidden" value="{{$file->file}}" name="file_lama">
   <div class="grup">
     <label for="">Periode Kepengurusan</label>
     <input name="name" autocomplete="off" type="text" value="{{$file->name}}" class="form-control">

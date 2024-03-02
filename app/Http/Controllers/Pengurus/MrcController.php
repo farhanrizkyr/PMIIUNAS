@@ -160,6 +160,10 @@ class MrcController extends Controller
         'harga'=>request()->harga,
         'gambar'=>$filename,
         ]);
+
+        if (request()->gambar_lama) {
+          unlink(public_path('Mrc').'/'.request()->gambar_lama);
+        }
          } else {
            Mrc::find($id)->update([
         'produk'=>request()->produk,

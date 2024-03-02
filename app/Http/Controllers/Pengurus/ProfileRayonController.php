@@ -130,6 +130,9 @@ class ProfileRayonController extends Controller
       'body'=>request()->body,
       'gambar'=>$filename,
        ]);
+      if (request()->gambar_lama) {
+         unlink(public_path('LogoRayon').'/'.request()->gambar_lama);
+      }
       } else {
         ProfileRayon::find($id)->update([
       'title'=>request()->title,

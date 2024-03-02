@@ -5,6 +5,7 @@
 @section('content')
 <form method="post" action="/profilesrayon/proses_edit_rayon/{{$rayon->id}}" enctype="multipart/form-data">
   @csrf
+  <input type="hidden" name="gambar_lama" value="{{$rayon->gambar}}">
   <div class="grup">
   <label for="">Nama Rayon</label>
   <input type="text" class="form-control" autocomplete="off" name="title" value="{{$rayon->title}}">

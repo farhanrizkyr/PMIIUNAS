@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Kader;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Auth;
-use Illuminate\Support\Facades\File;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -73,7 +72,7 @@ class PostController extends Controller
      'kader_id'=>Auth::user()->id,
      'slug'=>str::slug(request ()->name),
      'body'=>request()->body,
-    'category_id'=>request()->category_idz,
+    'category_id'=>request()->category_id,
     'image'=>$filename,
       ]);
       } else {
@@ -167,18 +166,17 @@ class PostController extends Controller
     'body.required'=>'Wajib Di isi',
     ]);
 
-
+     
     
-    if (request()->file('image') ) {
+    if (request()->hasfile('image')) {
+       $gambar=request()->file('image');
+      $nama_gambar=$gambar->getClientOriginalname();
+      $gambar->move(public_path('Posts'),$nama_gambar);
 
-      $old_image='public/Posts/'.request()->image;
-      if (File::exists($old_image)) {
-       File::delete($old_image);
-      }
-      $file=request ()->file('image');
-    $filename=$file->getClientOriginalName();
-    $file->move(public_path('Posts'),$filename);
-    
+       if (request()->gambar_lama <> '') {
+      unlink(public_path('Posts').'/'.request()->gambar_lama);
+    }
+ 
     Post::find($id)->update([
       'kader_id'=>Auth::user()->id,
      'name'=>request()->name,
@@ -186,18 +184,20 @@ class PostController extends Controller
      'slug'=>str::slug(request ()->name),
      'body'=>request()->body,
     'category_id'=>request()->category_id,
-    'image'=>$filename,
+    'image'=>$nama_gambar,
       ]);
-
-   
-     
-       
+  
     }
+
+    
+
+
+
   
 
      else {
      Post::find($id)->update([
-           'kader_id'=>Auth::user()->id,
+     'kader_id'=>Auth::user()->id,
      'name'=>request()->name,
       'status'=>request()->status,
      'slug'=>str::slug(request ()->name),

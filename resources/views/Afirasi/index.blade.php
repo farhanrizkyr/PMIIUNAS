@@ -64,6 +64,7 @@
      <thead>
        <tr>
          <th>Testimoni</th>
+         <th>Upload</th>
          <th>Aksi</th>
        </tr>
      </thead>
@@ -78,6 +79,7 @@
               {!!$data->catatan!!}
             @endif
           </td>
+          <td>{{$data->created_at->isoformat('dddd, D MMMM Y')}}</td>
           <td>
             <a href="/kader/testimoni/edit-testimoni/{{$data->id}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
           </td>

@@ -140,6 +140,10 @@ class PemberitahuanController extends Controller
        'body'=>request()->body,
        'gambar'=>$filename,
         ]);
+
+      if (request()->gambar_lama) {
+        unlink(public_path('PosterPem').'/'.request()->gambar_lama);
+      }
         }
         else{
           Pemberitahuan::find($id)->update([

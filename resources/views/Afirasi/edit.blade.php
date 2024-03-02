@@ -12,7 +12,7 @@
             <p class="text-danger">{{$message}}</p>
             @enderror
         	</div>
-        	<button class="btn btn-primary">Update</button>
+        	<button class="btn btn-primary"><i class="fas fa-save"></i> Update</button>
         </form>
 </div>
 

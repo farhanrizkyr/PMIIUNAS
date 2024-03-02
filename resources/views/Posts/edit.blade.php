@@ -4,6 +4,12 @@
 <div class="card" style="padding:10px;">
   <form method="post" action="/kader/proses_edit_post/{{$post->id}}" enctype="multipart/form-data">
     @csrf
+    @if($post->image)
+     <div class="grup">
+      <input type="hidden" class="form-control" name="gambar_lama" value="{{$post->image}}">
+    </div>
+    @endif
+
     <div class="grup">
       <label for="">Judul</label>
       <input type="text" class="form-control" name="name" value="{{$post->name}}">

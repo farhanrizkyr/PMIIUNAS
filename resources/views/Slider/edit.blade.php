@@ -5,6 +5,10 @@
 @section('content')
 <form method="post" action="/sliders/proses_edit_slider/{{$slider->id}}" enctype="multipart/form-data">
   @csrf
+
+    
+    <input type="hidden" name="gambar_lama" value="{{$slider->gambar}}">
+
   <div class="grup">
   <label for="">Judul</label>
   <input type="text" name="name" class="form-control" autocomplete="off" value="{{$slider->name}}">

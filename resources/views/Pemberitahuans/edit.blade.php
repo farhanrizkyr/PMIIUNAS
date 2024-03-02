@@ -5,6 +5,11 @@
 @section('content')
 <form method="post" action="/pemberitahuan/proses_edit_pem/{{$pem->id}}" enctype="multipart/form-data">
   @csrf
+  @if($pem->gambar)
+    <div class="grup">
+  <input type="hidden" name="gambar_lama" value="{{$pem->gambar}}" class="form-control" autocomplete="off">
+</div>
+  @endif
   <div class="grup">
   <label for="">Judul Pemberitahuan</label>
   <input type="text" name="judulpem" value="{{$pem->judulpem}}" class="form-control" autocomplete="off">

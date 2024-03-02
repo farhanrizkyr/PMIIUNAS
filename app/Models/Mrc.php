@@ -10,11 +10,11 @@ class Mrc extends Model
     protected $table='mrc';
     protected $guarded=['id'];
 
-    public function gambar()
+     public function gambar()
     {
         if (!$this->gambar) {
             return asset('Mrc/noimage.png');
         }
-        return asset('Mrc'.$this->gambar);
+         return asset('Mrc/'.$this->gambar);
     }
 }

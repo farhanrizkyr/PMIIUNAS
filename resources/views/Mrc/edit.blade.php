@@ -5,6 +5,11 @@
 @section('content')
 <form method="post" action="/merchandise/proses_edit_mrc/{{$mrc->id}}" enctype="multipart/form-data">
   @csrf
+  @if($mrc->gambar)
+<div class="grup">
+  <input type="hidden" name="gambar_lama" value="{{$mrc->gambar}}">
+</div>
+@endif
   <div class="grup">
     <label for="">Produk</label>
     <input value="{{$mrc->produk}}" type="text" class="form-control" name="produk" autocomplete="off">

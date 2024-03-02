@@ -131,6 +131,10 @@ class StrukturOrganisasiController extends Controller
           'biro'=>request()->biro,
           'gambar'=>$filename,
            ]);
+
+         if (request()->gambar_lama) {
+             unlink(public_path('FotoStruktur').'/'.request()->gambar_lama);
+         }
          } else {
            StrukturOrganisasi::find($id)->update([
           'name'=>request()->name,
