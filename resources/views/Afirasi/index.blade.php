@@ -11,6 +11,12 @@
   </button>
 </div>
 @endif
+<h1>Berikan Testimoni</h1>
+@if($datas->count()>0)
+<div class="alert alert-warning" role="alert">
+ Anda Hanya Bisa Input Testimoni Hanya 1x 
+</div>
+@endif
 <br><br><br>
 @if($datas->count()<1)
 <button type="button" class="btn btn-primary  mb-4" data-toggle="modal" data-target="#exampleModal">
@@ -24,14 +30,13 @@
 </button>
 @endif
 
-
-
+  
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header bg-primary text-white">
         <h5 class="modal-title" id="exampleModalLabel">Buat Testimoni</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -48,8 +53,8 @@
             @enderror
         	</div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div class="modal-footer bg-primary">
+       <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times-circle"></i> Close</button>
         <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
         </form>
       </div>

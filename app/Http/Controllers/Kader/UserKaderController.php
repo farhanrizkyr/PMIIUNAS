@@ -54,13 +54,23 @@ class UserKaderController extends Controller
         request()->validate([
         'avatar'=>'required|mimes:jpg,png,jpeg|max:2048',
 
-        ]);
+        ],
+
+    [
+    'avatar.required'=>'Wajib Di Isi',
+    'avatar.mimes'=>'Wajib JPG,PNG,JPEG',
+     'avatar.max'=>'Maximal 2 MB'
+    ]);
        $filename=$user->avatar;
        if ($request->avatar) {
        
          $file=$request->avatar;
          $filename=$file->getClientOriginalName();
          $file->move(public_path('AvatarKader'),$filename);
+
+         if (request()->avatar_lama) {
+           unlink(public_path('AvatarKader').'/'.request()->avatar_lama);
+         }
        }
 
        Kader::find($id)->update([

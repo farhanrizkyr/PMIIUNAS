@@ -14,8 +14,21 @@ Setting-  {{Auth::user()->name}}
           </div>
 
 @if(Auth::user()->status=='disable')
-          <div class="alert alert-warning" role="alert">
- <i class="fas fa-info-circle"></i>  Akun Anda Sudah DiBlokir Jika Ingin Membuka Blokir Silahkan Hubungi Pengurus
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong> <i class="fas fa-info-circle"></i> {{Session::get('pesan')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+
+
+@if(Session::get('pesan'))
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong> <i class="fas fa-info-circle"></i> {{Session::get('pesan')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 @endif
           <div class="section-body">
@@ -113,7 +126,7 @@ Setting-  {{Auth::user()->name}}
                           </div>
                           <div class="form-group col-md-6 col-12">
                             <label>Tanggal Lahir</label>
-                            <input type="text" class="form-control" value="{{Auth::user()->tl}}" readonly>
+                            <input type="text" class="form-control" value="{{Carbon\Carbon::parse(Auth::user()->tl)->isoformat('DDD MMMM Y')}}" readonly>
                             <div class="invalid-feedback">
                               Please fill in the last name
                             </div>
@@ -148,6 +161,13 @@ Setting-  {{Auth::user()->name}}
                      <button type="button" style="background:salmon;" class="btn" data-toggle="modal" data-target="#exampleModal">
                    <i class="fas fa-user-edit"></i> Change Avatar
                   </button>
+
+                  @if(Auth::user()->avatar)
+                   <form method="post" action="/delete-avatar/{{Auth::user()->avatar}}">
+                     @csrf
+                     <button class="btn btn-danger"><i class="fas fa-trash"></i> Delete Avatar</button>
+                   </form>
+                  @endif
                     </div>
                   </form>
                 </div>
@@ -169,6 +189,9 @@ Setting-  {{Auth::user()->name}}
       <div class="modal-body">
       <form method="post" action="/user-profile/check_avatar/{{Auth::user()->id}}" enctype="multipart/form-data">
         @csrf
+         @if(Auth::user()->avatar)
+            <input type="hidden" name="avatar_lama" value="{{Auth::user()->avatar}}">
+          @endif
         <div class="grup">
           <label>Avatar</label>
           <input type="file" name="avatar" class="form-control @error('avatar')is-invalid @enderror">
