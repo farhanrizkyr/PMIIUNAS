@@ -174,7 +174,7 @@ Route::get('/anggota_kader/tambah_akun',[UserController::class,'addkader']);
 Route::get('/user/{username}',[UserController::class,'settings']);
 Route::get('/user/ubah/{username}',[UserController::class,'ubah']);
 Route::delete('/user/hapus/{id}',[UserController::class,'hapusakun']);
-
+Route::delete('/delete-account-kader/{id}',[UserController::class,'hapus_kader']);
 Route::post('/user/update_check/{id}',[UserController::class,'update']);
 Route::post('/user/update_avatar/{id}',[UserController::class,'update_avatar']);
 Route::delete('/user/hapus_avatar/{avatar}',[UserController::class,'hapus_avatar']);
