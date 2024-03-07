@@ -194,14 +194,14 @@ class UserController extends Controller
        return view('UserAdmin/profilekader',compact('user'));
      }
 
-     public function hapus_avatar($avatar)
+      public function hapus_kader($id)
      {
-      $user=User::where('avatar',$avatar)->first();
-
-        unlink(public_path('Avatar').'/'.$user->avatar);
-       
-       $user->delete();
-       return redirect('/user')->with('pesan','Avatar Berhasil DiHapus');
+      $kaderuser=Kader::find($id);
+      if ($kaderuser->avatar <> '') {
+         unlink(public_path('AvatarKader').'/'.$kaderuser->avatar);
+        }  
+       $kaderuser->delete();
+       return redirect('/anggota_kader')->with('pesan','Avatar Berhasil DiHapus');
      }
      
 }
