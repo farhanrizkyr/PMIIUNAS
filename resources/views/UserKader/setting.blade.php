@@ -126,7 +126,7 @@ Setting-  {{Auth::user()->name}}
                           </div>
                           <div class="form-group col-md-6 col-12">
                             <label>Tanggal Lahir</label>
-                            <input type="text" class="form-control" value="{{Carbon\Carbon::parse(Auth::user()->tl)->isoformat('DDD MMMM Y')}}" readonly>
+                            <input type="text" class="form-control" value="{{Carbon\Carbon::parse(Auth::user()->tl)->isoformat('DD MMMM Y')}}" readonly>
                             <div class="invalid-feedback">
                               Please fill in the last name
                             </div>
@@ -162,14 +162,7 @@ Setting-  {{Auth::user()->name}}
                    <i class="fas fa-user-edit"></i> Change Avatar
                   </button>
 
-                  @if(Auth::user()->avatar)
-                   <form method="post" action="/delete-avatar/{{Auth::user()->avatar}}">
-                     @csrf
-                     <button class="btn btn-danger"><i class="fas fa-trash"></i> Delete Avatar</button>
-                   </form>
-                  @endif
-                    </div>
-                  </form>
+                
                 </div>
               </div>
             </div>
