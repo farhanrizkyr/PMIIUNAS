@@ -91,6 +91,16 @@ Tambah Kader</a>
 
          <td>
            <a href="/anggota_kader/ubahstatus/{{$kader->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Edit</a>
+              @if($kader->posts->count()<1)
+            <form method="post" action="/delete-account-kader/{{$kader->id}}" class="d-inline">
+              @csrf
+              @method('delete')
+               <button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+            </form>     
+           @endif
+            @if($kader->posts->count()>0)  
+          <button disabled class="btn btn-default"><i class="fas fa-trash"></i> Delete</button>
+           @endif
          </td>
        </tr>
       @endforeach
