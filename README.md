@@ -1,4 +1,4 @@
-<h1>Content Management Sistem PMIIUNAS</h1>
+<center><h1>Content Management Sistem PMIIUNAS</h1></center>
 Halaman Login Kader Untuk Membuat Postingan Artikel
 
 
