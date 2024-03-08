@@ -1,4 +1,15 @@
 <center><h1>Content Management Sistem PMIIUNAS</h1></center>
+
+<h3>Menu Admin</h3>
+Halaman Login Pengurus
+
+![login admin](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/efe6f964-bb5f-4c37-b5b6-52d68daea1d5)
+
+Halaman Dashboard Pengurus
+
+![home admin](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/000ec8fd-09a3-450b-ad77-f97c8cb5e0cd)
+
+<h3>Menu Kader</h3>
 Halaman Login Kader Untuk Membuat Postingan Artikel
 
 
