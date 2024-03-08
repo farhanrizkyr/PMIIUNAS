@@ -36,6 +36,10 @@
                         @endif
                        <br><br>
                        <form action="/user/update_avatar/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @if(Auth::user()->avatar)
+                         <input type="hidden" name="avatar_lama" value="{{Auth::user()->avatar}}">
+                         @endif
                        	<div class="group">
                        		<label>Photo Profile</label>
                        		<input type="file" name="avatar" class="form-control">

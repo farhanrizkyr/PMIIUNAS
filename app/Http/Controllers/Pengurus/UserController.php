@@ -124,6 +124,9 @@ class UserController extends Controller
          $file=$request->avatar;
          $filename=$file->getClientOriginalName();
          $file->move(public_path('Avatar'),$filename);
+          if (request()->avatar_lama) {
+           unlink(public_path('Avatar').'/'.request()->avatar_lama);
+         }
        }
 
        User::find($id)->update([

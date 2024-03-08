@@ -13,7 +13,7 @@
             @endif
 
             <br><br>
-<a href="/grafiks" class="btn btn-primary btn-sm mb-2"><i class="fas fa-chart-line"></i> Grafik Chart Pendaftaran MAPABA</a>
+
 @if ( Auth::user()->role == 'Panitia')
 <h1>Selamat Datang Di Halaman Dashboard Panitia</h1>
     <section class="content">
