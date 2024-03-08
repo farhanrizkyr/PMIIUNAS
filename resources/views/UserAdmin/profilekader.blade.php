@@ -104,7 +104,7 @@ profile: {{$user->name}}
                        <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Tanggal Lahir</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" value="{{$user->tl}}" readonly placeholder="Tanggal Lahir">
+                          <input type="text" class="form-control" id="inputName" value="{{Carbon\Carbon::parse($user->tl)->isoformat('DD, MMMM Y')}}" readonly placeholder="Tanggal Lahir">
                         </div>
                       </div>
 
