@@ -1,4 +1,5 @@
 <center><h1>Content Management Sistem PMIIUNAS</h1></center>
+Sistem ini dibuat menggunakan Teknologi Laravel + Boostrap dan MYSQL sistem CMS ini untuk membantu Anggota organisasi tersebut untuk mengelola website tersebut  dengan sangat mudah tidak perlu ribet lagi dengan beberapa fitur yang tersedia di dalam halaman dashboard yang disediakan
 
 <h3>Menu Admin</h3>
 Halaman Login Pengurus
