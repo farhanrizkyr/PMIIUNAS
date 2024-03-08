@@ -10,7 +10,14 @@ Halaman Dashboard Pengurus
 
 ![home admin](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/000ec8fd-09a3-450b-ad77-f97c8cb5e0cd)
 
-<h3>Menu Kader</h3>
+Halaman Membuat Account Kader yang digunakan untuk mengakses ke halaman dashboard kader untuk membuat tulisan artikel yang ingin di tulis
+
+![kader](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/c74ad22d-0e87-45a0-b6ac-566a03f3d655)
+
+Halaman Membuat Account Pengurus untuk menambahkan Anggota Kepengurusan pada masa jabatanya 
+
+<h3>Menu![pengurus](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/5c5bb833-6611-48ca-ab83-95f1a994dc6d)
+ Kader</h3>
 Halaman Login Kader Untuk Membuat Postingan Artikel
 
 
