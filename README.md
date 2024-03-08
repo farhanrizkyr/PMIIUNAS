@@ -16,8 +16,10 @@ Halaman Membuat Account Kader yang digunakan untuk mengakses ke halaman dashboar
 
 Halaman Membuat Account Pengurus untuk menambahkan Anggota Kepengurusan pada masa jabatanya 
 
-<h3>Menu![pengurus](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/5c5bb833-6611-48ca-ab83-95f1a994dc6d)
- Kader</h3>
+
+![pengurus](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/936a1d08-00a9-4cd1-bebd-41491af95da1)
+
+<h3>Menu Kader</h3>
 Halaman Login Kader Untuk Membuat Postingan Artikel
 
 
