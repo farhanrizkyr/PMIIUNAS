@@ -57,3 +57,13 @@ Halaman menu Category Untuk Membuat Category Postingan Artikel
 
 
 ![pmiiunas category](https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/acc69229-744f-44b5-b37a-7f566fb3c967)
+
+
+
+<center><h1>Content Management Sistem PMIIUNAS Menu Pengurus</h1></center>
+
+
+
+https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/a7dd0180-15e3-491a-bea1-3bf89fc55507
+
+
