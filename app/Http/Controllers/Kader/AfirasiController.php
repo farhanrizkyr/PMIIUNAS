@@ -40,11 +40,10 @@ class AfirasiController extends Controller
 
    public function edit($id)
    {
-     if($data==false) {
-    
+     $data=Afirasi::find($id);
+     if($data==false) {    
        return redirect('/kader/testimoni');
      }
-        $data=Afirasi::find($id);
       return view('Afirasi.edit',compact('data'));
    }
 
