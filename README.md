@@ -1,6 +1,7 @@
 <center><h1>Content Management Sistem PMIIUNAS</h1></center>
 Sistem ini dibuat menggunakan Teknologi Laravel + Boostrap dan MYSQL sistem CMS ini untuk membantu Anggota organisasi tersebut untuk mengelola website tersebut  dengan sangat mudah tidak perlu ribet lagi dengan beberapa fitur yang tersedia di dalam halaman dashboard yang disediakan lalu terdapat menu kader untuk membuat Postingan Artikel yang ingin di buat oleh seluruh Anggota organisasi tersebut dan juga sistem ini adalah versi terbaru dari versi CMS yang lama yang saya bangun menggunakan PHP native + Boostrap dan MYSQL
 
+
 <h3>Menu Admin</h3>
 Halaman Login Pengurus
 
@@ -71,5 +72,9 @@ https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/a7dd0180-15e3-491a-bea1
 
 https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/cc944520-655c-40b4-9b07-65c8c2cfe650
 
+
+Account Pengurus
+Username:pmiiunas
+Password:pmiiunas
 
 
