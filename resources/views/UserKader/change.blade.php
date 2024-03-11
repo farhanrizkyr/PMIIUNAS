@@ -32,8 +32,8 @@ Setting {{Auth::user()->name}}
 			<label>Gender</label>
 			<select name="gender" class="form-control">
 				<option value="">Pilih</option>
-				<option value="(L)- Laki-Laki" @if($user->gender=='(L)- Laki-Laki')selected @endif>Laki Laki</option>
-				<option  value="(P)- Perempuan" @if($user->gender=='(P)- Perempuan')selected @endif>Perempuan</option>
+				<option value="(L)- Laki-Laki" @if(Auth::user()->gender=='(L)- Laki-Laki')selected @endif>Laki Laki</option>
+				<option  value="(P)- Perempuan" @if(Auth::user()->gender=='(P)- Perempuan')selected @endif>Perempuan</option>
 			</select>
 		</div>
 

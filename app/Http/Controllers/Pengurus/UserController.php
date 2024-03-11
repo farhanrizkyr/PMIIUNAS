@@ -75,10 +75,7 @@ class UserController extends Controller
      public function ubah($username)
 
      {
-      $data=User::where('username',$username)->first();
-       if ($data==false) {
-         return view('UserAdmin/404');
-       }
+      
        return view('UserAdmin/ubahuser',compact('data'));
      }
 

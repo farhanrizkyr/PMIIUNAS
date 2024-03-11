@@ -141,7 +141,7 @@
                     
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                         <a href="/user/ubah/{{Auth::user()->username}}" class="btn btn-warning"> <i class="fas fa-user-edit"></i> Edit Profile</a>
+                         <a href="/user/ubah-user/" class="btn btn-warning"> <i class="fas fa-user-edit"></i> Edit Profile</a>
                         </div>
                       </div>
                     </form>

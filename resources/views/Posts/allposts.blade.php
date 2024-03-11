@@ -13,7 +13,11 @@
     <div class="card">
     <a href="/kader/detail/{{$posts->slug}}"> <img src="{{$posts->image()}}" class="card-img-top" width="300px;" alt="{{$posts->image}}"></a>
       <div class="card-body">
-        <h5 class="card-title"><a href="/kader/detail/{{$posts->slug}}">{{$posts->name}}</a></h5>
+       @if(strlen($posts->name)>40)
+          <h5 class="card-title"><a href="/kader/detail/{{$posts->slug}}">{{substr($posts->name,0,49)}} ....</a></h5>
+          @else
+           <h5 class="card-title"><a href="/kader/detail/{{$posts->slug}}">{{$posts->name}}</a></h5>
+       @endif
         <p class="card-text">{!!$body!!}</p>
       </div>
     </div>

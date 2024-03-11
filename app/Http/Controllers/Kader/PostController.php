@@ -63,7 +63,7 @@ class PostController extends Controller
  
       if (request()->image <> '') {
      $file=request ()->file('image');
-    $filename=$file->getClientOriginalName();
+    $filename=time().'.'.$file->getClientOriginalExtension();
     $file->move(public_path('Posts'),$filename);
     
     
@@ -170,7 +170,7 @@ class PostController extends Controller
     
     if (request()->hasfile('image')) {
        $gambar=request()->file('image');
-      $nama_gambar=$gambar->getClientOriginalname();
+      $nama_gambar=time().'.'.$gambar->getClientOriginalExtension();
       $gambar->move(public_path('Posts'),$nama_gambar);
 
        if (request()->gambar_lama <> '') {

@@ -69,7 +69,7 @@
           <span class="badge badge-danger">UnPublish</span>
           @endif
         </td>
-        <td>{{$data->created_at->isoformat('D, MMMM Y')}}</td>
+        <td>{{$data->created_at->isoformat('dddd D, MMMM Y')}}</td>
         <td><img width="150" src="{{$data->image()}}" alt="{{$data->image}}"></td>
         <td>
             <span class="badge badge-primary">
