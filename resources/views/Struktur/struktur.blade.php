@@ -27,8 +27,8 @@
   <br><br>
  
 <div class="table-wrapper">
-  <table id="tabel-struktur" class="table table-striped table-bordered" width="100%" cellspacing="0">
-        <thead>
+  <table class="table" id="tabel-data" >
+  <thead>
             <tr>
                 <th>No</th>
                 <th>Nama </th>
@@ -98,11 +98,7 @@
           </tr>
             @endforeach
         </tbody>
-
-         
-       
-        
-    </table>
+  </table>
   </div>
   
 
