@@ -38,7 +38,7 @@
             @endif
        <h3 class="text-center"> <i class="fas fa-cog"></i> PMIIUNAS</h3>
       <p class="login-box-msg">Back Office <br>
-        Web Application PMII Komisariat Universitas Nasional
+       Content Management Sistem Universitas Nasional
        </p>
 
 
