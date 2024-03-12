@@ -126,7 +126,13 @@ Setting-  {{Auth::user()->name}}
                           </div>
                           <div class="form-group col-md-6 col-12">
                             <label>Tanggal Lahir</label>
+                            @if(Auth::user()->tl)
                             <input type="text" class="form-control" value="{{Carbon\Carbon::parse(Auth::user()->tl)->isoformat('DD MMMM Y')}}" readonly>
+                            @endif
+
+                             @if(Auth::user()->tl==null)
+                            <input type="text" class="form-control" value="" readonly>
+                            @endif
                             <div class="invalid-feedback">
                               Please fill in the last name
                             </div>
