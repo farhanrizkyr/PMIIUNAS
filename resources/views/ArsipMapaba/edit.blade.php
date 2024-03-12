@@ -20,7 +20,7 @@
     <p class="text-danger">{{$message}}</p>
     @enderror
     <hr>
-    File:
+    File PDF:
     <a href="/FileArsipMAPABA/{{$file->file}}">{{$file->file}}</a>
   </div>
   <br>
