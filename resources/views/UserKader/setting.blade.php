@@ -15,7 +15,7 @@ Setting-  {{Auth::user()->name}}
 
 @if(Auth::user()->status=='disable')
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong> <i class="fas fa-info-circle"></i> {{Session::get('pesan')}}
+  <strong> <i class="fas fa-info-circle"></i> User Account Anda, Telah Di Blokir Jika Ingin Membuka Silahkan Hubungi Pengurus
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

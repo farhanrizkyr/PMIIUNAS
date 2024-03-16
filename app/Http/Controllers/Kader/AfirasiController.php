@@ -30,19 +30,29 @@ class AfirasiController extends Controller
 
       ]);
 
+
+ if (auth::user()->status=='active') {
        Afirasi::create([
         'catatan'=>request()->catatan,
         'kader_id'=>Auth::user()->id,
 
        ]);
+        
        return redirect('kader/testimoni')->with('pesan','Testimoni Berhasil Di Buat');
+   }
+       if (auth::user()->status=='disable') {
+           return redirect('kader/testimoni')->with('gagal','Testimoni Gagal Di Buat');
+     }
    }
 
    public function edit($id)
    {
      $data=Afirasi::find($id);
      if($data==false) {    
-       return redirect('/kader/testimoni');
+       return redirect('/kader/testimoni')->with('pesan','Data Tidak Ada');
+     }
+     if (auth::user()->status=='disable') {
+          return redirect('/kader/testimoni');
      }
       return view('Afirasi.edit',compact('data'));
    }
@@ -65,5 +75,13 @@ class AfirasiController extends Controller
        ]);
 
         return redirect('kader/testimoni')->with('pesan','Testimoni Berhasil Di Ubah');
+      }
+
+
+      public function delete($id)
+      {
+          $data=Afirasi::find($id);
+          $data->delete();
+            return redirect('kader/testimoni')->with('pesan','Testimoni Berhasil Di Hapus');
       }
 }

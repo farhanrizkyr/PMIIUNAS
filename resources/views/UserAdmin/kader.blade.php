@@ -82,13 +82,12 @@ Tambah Kader</a>
          <td>
            @if($kader->afirasis->count()>0)
            <span class="badge badge-success">Sudah DiBuat</span>
-           <a href="" class="mb-3">Lihat</a>
            @endif
              @if($kader->afirasis->count()<1)
            <span class="badge badge-danger">Belum DiBuat</span>
            @endif
          </td>
-         <td>{{$kader->posts->count()}}</td>
+         <td class="text-center"><b>{{$kader->posts->count()}}</b></td>
          <td>
            @if($kader->status=='active')
            <p class="badge badge-success">Akun Aktif</p>

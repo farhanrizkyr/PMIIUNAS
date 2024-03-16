@@ -23,7 +23,7 @@
   <table class="table" id="tabel-data" >
     <thead>
       <tr>
-        <th>no</th>
+        <th>No</th>
         <th>Nama Rayon</th>
         <th>Logo</th>
         <th>Body</th>

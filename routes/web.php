@@ -235,6 +235,7 @@ Route::get('/saran',[SaranController::class,'index']);
 Route::delete('/saran/hapus/{id}',[SaranController::class,'destroy']);
 //==============================Saran===================//
 Route::get('/kader/testimoni',[AfirasiController::class,'index']);
+Route::delete('/kader/testimoni/delete-testimoni/{id}',[AfirasiController::class,'delete']);
 Route::post('/kader/create-testimoni',[AfirasiController::class,'create']);
 Route::get('/kader/testimoni/edit-testimoni/{id}',[AfirasiController::class,'edit']);
 Route::post('/kader/proses-edit-testimoni/{id}',[AfirasiController::class,'proses_edit']);
