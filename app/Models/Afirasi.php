@@ -12,4 +12,10 @@ class Afirasi extends Model
    {
         return $this->BelongsTo(Kader::class);
    }
+
+
+   public function time()
+   {
+      return $this->created_at->isoformat('dddd, D MMMM Y').'  '.$this->created_at->translatedformat('h:i');
+   }
 }

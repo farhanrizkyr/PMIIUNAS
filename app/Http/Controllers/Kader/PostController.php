@@ -231,7 +231,56 @@ class PostController extends Controller
     public function all()
     {
       $all=Post::orderby('created_at','desc')->where('kader_id',auth()->user()->id)->where('status','publish')->paginate(3);
-     return view('Posts/allposts',compact('all'));
+       $categories=Category::latest()->get();
+     return view('Posts/allposts',compact('all','categories'));
     }
+
+      public function store1()
+  {
+    request()->validate([
+     'name'=>'required|unique:posts',
+     'category_id'=>'required',
+     'image'=>'mimes:jpg,png,jpeg|max:2048',
+     'body'=>'required',
+    ],
+    [
+    'name.required'=>'Wajib Di isi',
+    'name.unique'=>'Judul Artikel Sudah ada',
+    'category_id.required'=>'Wajib Di isi',
+    'image.required'=>'Gambar Wajib isi',
+    'image.mimes'=>'Gambar Wajib JPG,PNG,JPEG',
+    'image.max'=>'Ukuran Gambar Harus 2MB',
+    'body.required'=>'Wajib Di isi',
+    ]);
+    
+ 
+      if (request()->image <> '') {
+     $file=request ()->file('image');
+    $filename=time().'.'.$file->getClientOriginalExtension();
+    $file->move(public_path('Posts'),$filename);
+    
+    
+    Post::create([
+     'name'=>request()->name,
+     'kader_id'=>Auth::user()->id,
+     'slug'=>str::slug(request ()->name),
+     'body'=>request()->body,
+    'category_id'=>request()->category_id,
+    'image'=>$filename,
+      ]);
+      } else {
+          Post::create([
+     'name'=>request()->name,
+     'kader_id'=>Auth::user()->id,
+     'slug'=>str::slug(request ()->name),
+     'body'=>request()->body,
+    'category_id'=>request()->category_id,
+
+      ]);
+      }
+      
+      return redirect('/kader/allposts');
+  }
+
 }
 

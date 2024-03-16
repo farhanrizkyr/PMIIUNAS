@@ -115,7 +115,7 @@
               {!!$data->catatan!!}
             @endif
           </td>
-          <td>{{$data->created_at->isoformat('dddd, D MMMM Y')}}</td>
+          <td>{{$data->time()}}</td>
           <td>
 
             @if(Auth::user()->status=='active')
@@ -148,7 +148,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="exampleModalLabel">Detail Catatan</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Detail Testimoni</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

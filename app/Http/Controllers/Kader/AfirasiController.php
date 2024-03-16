@@ -52,7 +52,7 @@ class AfirasiController extends Controller
        return redirect('/kader/testimoni')->with('pesan','Data Tidak Ada');
      }
      if (auth::user()->status=='disable') {
-          return redirect('/kader/testimoni');
+          return redirect('/kader/testimoni')->with('gagal','Anda Sementara Tidak Bisa Mengedit Testimoni');
      }
       return view('Afirasi.edit',compact('data'));
    }

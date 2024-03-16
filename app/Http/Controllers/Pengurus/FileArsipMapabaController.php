@@ -55,7 +55,7 @@ class FileArsipMapabaController extends Controller
         ]);
         
         $file=request()->file('file');
-        $filename=$file->getClientOriginalName();
+         $filename=time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('FileArsipMAPABA'),$filename);
       FileArsipMapaba::create([
       'name'=>request()->name, 
@@ -84,6 +84,9 @@ class FileArsipMapabaController extends Controller
     public function edit($id)
     {
         $file=FileArsipMapaba::find($id);
+        if ($file==false) {
+           return redirect('/filearsipmapabaraya');
+        }
         return view('ArsipMapaba/edit',compact('file'));
     }
 
@@ -109,7 +112,7 @@ class FileArsipMapabaController extends Controller
         
         if (request ()->file <> '') {
           $file=request()->file('file');
-        $filename=$file->getClientOriginalName();
+         $filename=time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('FileArsipMAPABA'),$filename);
       FileArsipMapaba::find($id)->update([
       'name'=>request()->name, 

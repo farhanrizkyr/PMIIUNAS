@@ -164,6 +164,7 @@ Route::get('/kader/edit_post/{slug}',[PostController::class,'edit']);
 Route::post('/kader/proses_edit_post/{id}',[PostController::class,'update']);
 Route::get('/kader/detail/{slug}',[PostController::class,'show']);
 Route::get('/kader/allposts',[PostController::class,'all']);
+Route::post('/kader/allposts/proses_tambah_post1/',[PostController::class,'store1']);
 //==============================UserPengurus===================//
 Route::get('/anggota_pengurus',[UserController::class,'pengurus']);
 Route::get('/anggota_kader',[UserController::class,'kaders']);

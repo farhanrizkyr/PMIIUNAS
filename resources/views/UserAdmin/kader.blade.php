@@ -12,6 +12,31 @@
 </div>
 @endif
 <br><br>
+<h1>Halaman User Account Kader</h1>
+<div class="row">
+<div class="col">
+
+<div class="small-box bg-info">
+<div class="inner">
+<h3>Informasi !</h3>
+<p>
+  <ol>
+    <li>Perhatikan Tombol button Delete Berwarna Merah, Maka User Account dapat di Delete</li>
+    <li>Jika Tombol Delete Tidak Muncul Berarti User Account Tidak Bisa Di Hapus dan jika User Account ingin tetap di hapus silahkan hubungi Kader untuk menghapus semua Postingan Artikel ketika kader sudah menghapus Semua Postingan Artikel maka tombol button  merah Akan muncul dan User Account sudah bisa di delete</li>
+    <li>Jika Postingan Sudah Di hapus tetapi tombol button merah tidak muncul Kader harus menghapus Testimoni dan tombol button akan muncul kembali</li>
+  </ol>
+</p>
+</div>
+<div class="icon">
+<i class="ion ion-bag"></i>
+</div>
+<small class="small-box-footer"><i class="fas fa-info-circle"></i> Informasi</small>
+</div>
+</div>
+
+
+
+</div>
 <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -101,14 +126,19 @@ Tambah Kader</a>
          <td>
            <a href="/anggota_kader/ubahstatus/{{$kader->id}}" class="btn btn-info"><i class="fas fa-edit"></i> Edit</a>
               @if($kader->posts->count()<1)
+               @if($kader->afirasis->count()<1)
             <form method="post" action="/delete-account-kader/{{$kader->id}}" class="d-inline">
               @csrf
               @method('delete')
                <button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
             </form>     
            @endif
-            @if($kader->posts->count()>0)  
-          <button disabled class="btn btn-default"><i class="fas fa-trash"></i> Delete</button>
+           @endif
+
+            @if($kader->afirasis->count()<0)
+            @if($kader->posts->count()<0)  
+      
+           @endif
            @endif
          </td>
        </tr>
