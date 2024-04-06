@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pengurus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Hash;
+use Illuminate\Support\Str;
 use App\Models\User;
 class AdminRegisterController extends Controller
 {
@@ -50,7 +51,7 @@ class AdminRegisterController extends Controller
         'name'=>request()->name,
         'email'=>request()->email,
         'role'=>request()->role,
-        'username'=>request()->username,
+        'username'=>Str::lower(request()->username),
         'password'=>hash::make(request()->password),
 
       ]);
