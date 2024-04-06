@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kader;
 use Illuminate\Http\Request;
 use Hash;
-
+use Illuminate\Support\Str;
 class KaderRegisterController extends Controller
 {
 
@@ -47,7 +47,7 @@ class KaderRegisterController extends Controller
      Kader::create([
         'name'=>request()->name,
         'email'=>request()->email,
-        'username'=>request()->username,
+        'username'=>Str::lower(request()->username),
         'password'=>hash::make(request()->password),
 
       ]);
