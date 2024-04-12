@@ -64,7 +64,7 @@ profile: {{$user->name}}
                 
                   <li class="nav-item"><a class="nav-link bg-primary" href="#data-profile" data-toggle="tab"><i class="fas fa-user"></i>  Data Profile</a></li>
                 </ul>
-                   <h5 style="float:right;"><i class="fas fa-calendar-week"></i> Dibuat: {{$user->created_at->isoformat('D MMMM Y ')}}</h5>
+                   <h5 style="float:right;"><i class="fas fa-calendar-week"></i> Dibuat: {{$user->created_at->isoformat('dddd ,D MMMM Y ')}}</h5>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">

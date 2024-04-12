@@ -29,9 +29,10 @@ class="fas fa-sync-alt"></i></button>
   Tambah Peserta</a>
   <br></br>
   <div class="group">  
-   <a style="float:right;" href="/listmapaba/pdf" target="_blank" class="btn btn-danger btn-sm">
-<i class="fas fa-file-pdf"></i>
-    PDF</a>
+
+    <form method="get" style="float:right;" target="_blank" action="/listmapaba/pdf">
+       <button class="btn btn-danger"><i class="fas fa-file-pdf"></i> PDF</button>
+    </form>
   </div>
   <br><br>
 <div class="table-wrapper">
@@ -40,6 +41,7 @@ class="fas fa-sync-alt"></i></button>
             <tr>
                 <th>No</th>
                 <th>Nama Mahasiswa</th>
+                <th>Tanggal Daftar</th>
                 <th>Kampus</th>
                 <th>Tahun</th>
                 <th>Program Studi</th>
@@ -64,6 +66,7 @@ class="fas fa-sync-alt"></i></button>
           @endphp 
             <td>{{$no++;}}</td>
             <td>{{$datas->name}}</td>
+            <td>{{Carbon\Carbon::parse($datas->created_at)->isoformat('dddd ,DD MMM Y')}}</td>
             <td>{{$datas->kampus}}</td>
             <td>{{optional($datas->tahun)->tahun??null}}</td>
            <td>{{optional($datas->progdi)->progdi??null}}</td>

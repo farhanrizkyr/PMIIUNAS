@@ -16,7 +16,7 @@ class Post extends Model
    return $this->BelongsTo(Category::class);
    }
 
-   public function posts()
+   public function post()
    {
       return $this->BelongsTo(Kader::class,'kader_id');
    }

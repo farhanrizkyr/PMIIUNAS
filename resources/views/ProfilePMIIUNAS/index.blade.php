@@ -1,7 +1,7 @@
 @extends('master.tampil')
-@section('tittle','Sejarah PMII')
-@section('page','Sejarah PMII')
-@section('contentt','Halaman Sejarah PMII')
+@section('tittle','Profile PMIIUNAS')
+@section('page','Profile PMIIUNAS')
+@section('contentt','Halaman Profile PMIIUNAS')
 @section('content')
 @if(Session::get('pesan'))
 <div class="alert alert-primary" role="alert">

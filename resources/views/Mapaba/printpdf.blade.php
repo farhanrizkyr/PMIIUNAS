@@ -21,7 +21,7 @@
       <div class="col-12">
         <h2 class="page-header">
           <i class="fas fa-globe"></i> PMII Komisariat Universitas Nasional.
-          <small class="float-right">Date: {{date('d/m/Y')}}</small>
+          <small class="float-right">Date: {{date('d/M/Y')}}</small>
         </h2>
       </div>
       <!-- /.col -->

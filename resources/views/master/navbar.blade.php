@@ -48,13 +48,13 @@
               <li class="nav-item">
                 <a href="/listsig" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>SIG </p>
+                  <p>Pendaftaran SIG </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/history-datamapaba" class="nav-link">
+                <a href="/listmapaba" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>History Mapaba</p>
+                  <p>Pendaftaran Mapaba</p>
                 </a>
               </li>
 

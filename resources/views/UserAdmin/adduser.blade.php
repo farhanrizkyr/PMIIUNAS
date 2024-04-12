@@ -47,8 +47,8 @@
     <label for="inputPassword4" class="form-label">Role</label>
   <select class="form-control" name="role">
     <option value="">Pilih Role</option>
-    <option value="Pengurus">Pengurus</option>
-    <option value="Panitia">Panitia</option>
+    <option value="Pengurus" @if(old('role')=="Pengurus")selected @endif>Pengurus</option>
+    <option value="Panitia" @if(old('role')=="Panitia")selected  @endif>Panitia</option>
   </select>
   @error('role')
     <p class="text-danger">{{$message}}</p>

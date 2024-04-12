@@ -11,7 +11,7 @@ class Progdi extends Model
      protected $guarded=['id'];
      public function progdis()
      {
-       return $this->hasMany(Mapaba::class);
+       return $this->hasMany(Mapaba::class)->orderby('created_at','desc')->where('archive','approve');
      }
 
       public function progdiis()

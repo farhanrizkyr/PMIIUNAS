@@ -25,7 +25,8 @@
     <thead>
       <tr>
         <th>No</th>
-        <th>Nama</th>
+        <th>Nama Produk</th>
+        <th>Tanggal Upload</th>
         <th>Harga</th>
         <th>Status</th>
         <th>Cp</th>
@@ -39,6 +40,7 @@
       <tr>
         <td>{{$no++;}}</td>
         <td>{{$data->produk}}</td>
+          <td>{{Carbon\Carbon::parse($data->created_at)->isoformat('dddd ,DD MMM Y')}}</td>
         <td>
           @if($data->diskon==null)
           <p>

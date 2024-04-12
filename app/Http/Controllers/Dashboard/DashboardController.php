@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Sig;
-use App\Models\Post;
 use App\Models\Tahun;
 use App\Models\Progdi;
 use App\Models\Mapaba;
@@ -102,17 +101,7 @@ class DashboardController extends Controller
     return redirect('/formpendaftaranSIG');
   }
 
-  public function merchandise()
-  {
-    $mrc=Mrc::latest()->paginate(9);
-     return view('Dashboard/Mrc/mrc',compact('mrc'));
-  }
 
 
-  public function blog()
-  {
-     $posts=Post::latest()->paginate(9);
-   return view('Dashboard/Blog/blog',compact('posts'));
-  }
     
 }

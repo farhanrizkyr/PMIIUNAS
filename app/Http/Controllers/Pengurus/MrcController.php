@@ -63,7 +63,7 @@ class MrcController extends Controller
         
        if (request()->gambar <> '') {
            $file=request()->file('gambar');
-        $filename=$file->getClientOriginalName();
+        $filename=time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('Mrc'),$filename);
         Mrc::create([
         'produk'=>request()->produk,
@@ -149,7 +149,7 @@ class MrcController extends Controller
         
          if (request ()->gambar <> '') {
         $file=request()->file('gambar');
-        $filename=$file->getClientOriginalName();
+        $filename=time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('Mrc'),$filename);
         Mrc::find($id)->update([
         'produk'=>request()->produk,

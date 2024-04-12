@@ -26,7 +26,7 @@ class AdminRegisterController extends Controller
       request()->validate([
        'name'=>'required',
        'role'=>'required',
-       'username'=>'required|unique:users',
+       'username'=>'required|unique:users|alpha_dash',
        'email'=>'required|email:dns|unique:users',
        'password'=>'required|confirmed|min:5',
 
@@ -43,6 +43,7 @@ class AdminRegisterController extends Controller
       'username.required'=>'Wajib Diisi',
        'username.unique'=>'Tidak Boleh Sama',
       'username.required'=>'Wajib Diisi',
+      'username.alpha_dash'=>'Tidak Boleh Ada Spasi',
       'password.required'=>'Wajib Diisi',
       'password.confirmed'=>' Password Tidak Sesuai ',
       'password.min'=>'Password Tidak Boleh dari kurang 5 karakter'

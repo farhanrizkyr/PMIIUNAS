@@ -44,7 +44,7 @@ Setting-  {{Auth::user()->name}}
                     <img alt="image" src="{{Auth::user()->avatar()}}" class="rounded-circle profile-widget-picture">
                     <div class="profile-widget-items">
                       <div class="profile-widget-item">
-                        <div class="profile-widget-item-label">Posts</div>
+                        <div class="profile-widget-item-label"><i class="fas fa-newspaper"></i> Posts</div>
                         <div class="profile-widget-item-value">{{Auth::user()->posts->count()}}</div>
                       </div>
                      
@@ -53,8 +53,8 @@ Setting-  {{Auth::user()->name}}
                   <div class="profile-widget-description">
 
                     <div class="profile-widget-name">{{Auth::user()->name}} <div class="text-muted d-inline font-weight-normal"><div class="slash"></div> Bio</div></div>
-                  @if(strlen(Auth::user()->bio)>360)
-                {!!substr(Auth::user()->bio,0,360)!!}
+                  @if(strlen(Auth::user()->bio)>370)
+                {!!substr(Auth::user()->bio,0,370)!!}
                 <a href="#" style="text-decoration:none;"  data-toggle="modal" data-target="#detail-bio">Tampilkan...</a>
                 @else
                 {!!Auth::user()->bio!!}
@@ -181,7 +181,7 @@ Setting-  {{Auth::user()->name}}
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header bg-primary text-white">
         <h5 class="modal-title" id="exampleModalLabel">Choose Picture</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

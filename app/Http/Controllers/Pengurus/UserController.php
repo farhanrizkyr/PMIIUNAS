@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Kader;
 use Session;
 use Auth;
+use  Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -46,7 +48,8 @@ class UserController extends Controller
        $kaders=Kader::orderby('created_at','desc')->get();
        $aktif=Kader::where('status','active')->count();
        $not=Kader::where('status','disable')->count();
-       return view('UserAdmin/kader',compact('kaders','not','aktif'));
+      $total=DB::table('kaders')->count();
+       return view('UserAdmin/kader',compact('kaders','not','aktif','total'));
      }
 
     public function settings()
@@ -85,7 +88,6 @@ class UserController extends Controller
 
       request()->validate([
        'name'=>'required',
-       'bio'=>'required',
        'username'=>'required',
        'email'=>'required',
 
@@ -94,7 +96,6 @@ class UserController extends Controller
        'name.required'=>'Wajib Diisi',
        'email.required'=>'Wajib Diisi',
        'username.required'=>'Wajib Diisi',
-       'bio.required'=>'Wajib Diisi',
 
       ]);
        $user=User::find($id);
@@ -202,6 +203,42 @@ class UserController extends Controller
         }  
        $kaderuser->delete();
        return redirect('/anggota_kader')->with('pesan','Avatar Berhasil DiHapus');
+     }
+
+
+     public function postingan_kaders(Kader $user)
+     {
+      $data=$user->posts;
+
+      if ($data->count()<1) {
+        return redirect('/anggota_kader');
+      }
+       return view('UserAdmin/postingan_kaders',compact('data','user'));
+     }
+
+
+     public function ubah_password_kader($id)
+     {
+      $data=Kader::find($id);
+       if ($data==false) {
+        
+       return redirect('/anggota_kader/');
+      }
+        return view('UserAdmin/ubah_password_kader',compact('data'));
+     }
+
+
+     public function prosess($id)
+     {
+       request()->validate([
+        'password'=>'required|confirmed',
+
+       ]);
+        Kader::find($id)->update([
+        'password'=>Hash::make(request()->password),
+
+        ]);
+        return redirect('/anggota_kader')->with('pesan','Password Berhasil DiUpdate');
      }
      
 }

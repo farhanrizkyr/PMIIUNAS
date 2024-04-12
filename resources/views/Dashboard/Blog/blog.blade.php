@@ -13,19 +13,35 @@
   <body>
   	<h1 class="text-center mt-5">Blog Posts</h1>
   	<hr>
+
+<div class="row justify-content-center"> 
+<div class="col-md-7">
+  <form action="cari">
+  <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Cari">
+  <div class="input-group-append">
+    <button class="btn btn-primary" type="submit" id="button-addon2">Cari</button>
+  </div>
+  </form>
+</div>
+</div>
+</div>
+
+<div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
+
 	@forelse($posts as $post)
-	<?php $body=substr($post->body,0,300) ?>
-  <div class="col">
+	<?php $body=substr($post->body,0,500) ?>
+  <div class="col-md">
     <div class="card h-100">
       <img src="{{$post->image()}}" class="card-img-top" alt="...">
       <div class="card-body">
-      	  <h6 class="card-text"><a href="/blog/author/{{$post->posts->username}}" style="text-decoration:none;">{{$post->posts->name}}</a></h6>
-        <h5 class="card-title">{{$post->name}}</h5>
+      	  <small>By <a href="/blog/author/{{$post->post->username}}" style="text-decoration:none;">{{$post->post->name}}</a> | {{$post->created_at->isoformat('dddd D, MMMM Y')}}</small>
+          <a href="blog/{{$post->slug}}" style="text-decoration:none; color:black;"><h5 class="card-title">{{$post->name}}</h5></a>
         <p class="card-text">{!!$body!!}...</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">PMII KOMISARIAT UNIVERSITAS NASIONAL</small>
+        <small class="text-muted">{{$post->created_at->diffForHumans()}}</small>
       </div>
     </div>
   </div>
@@ -38,9 +54,11 @@
 
   
 </div>
-
-<div class="mt-5">
-	   {{$posts->links()}}
+</div>
+<div class="center">
+  <div class="mt-5 " style="">
+     {{$posts->links()}}
+</div>
 </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

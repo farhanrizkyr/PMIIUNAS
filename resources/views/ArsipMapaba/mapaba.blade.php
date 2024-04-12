@@ -16,15 +16,17 @@
 <br><br>
 <a href="/filearsipmapabaraya/add" class="btn btn-primary">
   <i class="fas fa-plus"></i>
-    tambah file baru
+   Tambah File Baru
   </a> 
   <br><br>
   <div class="table-wrapper">
   <table class="table" id="tabel-data" >
     <thead>
       <tr>
-        <th>no</th>
+        <th>No</th>
         <th>Judul</th>
+        <th>Tanggal Upload</th>
+        <th>Tanggal Update</th>
         <th>File PDF</th>
         <th>Aksi</th>
       </tr>
@@ -36,9 +38,14 @@
       <tr>
         <td>{{$no++;}}</td>
         <td>{{$data->name}}</td>
-        <td><a href="/filearsipMAPABA/{{$data->file}}" class="btn btn-success">
-          <i class="fas fa-download"></i>
-          download file</a></td>
+        <td>{{$data->time()}}</td>
+         <td>{{$data->timeupdate()}}</td>
+        <td>
+
+           <form method="get" target="framename" target="_blank" action="/filearsipMAPABA/{{$data->file}}">
+            <button class="btn  btn-success btn-sm"> <i class="fas fa-download"></i> Download</button>
+        </form>
+        </td>
         <td>
 
          <form method="post" action="filearsipmapabaraya/hapus_file_mapaba/{{$data->id}}" class="d-inline">

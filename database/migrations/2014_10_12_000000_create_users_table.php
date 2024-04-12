@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('gender')->nullable();
             $table->string('biro')->nullable();
-            $table->text('bio')->default('-');
+            $table->longtext('bio')->nullable();
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

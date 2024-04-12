@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->text('status')->default('publish');
+            $table->string('status')->default('publish');
             $table->string('image')->nullable();
             $table->foreignID('category_id');
             $table->foreignIDFor(Kader::class);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pengurus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mapaba;
+use App\Models\Progdi;
 class ImportDataMapabaController extends Controller
 {
     /**
@@ -70,9 +71,10 @@ class ImportDataMapabaController extends Controller
      * @param  \App\Models\ImportDataMapaba  $importDataMapaba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ImportDataMapaba $importDataMapaba)
+    public function list(Progdi $id)
     {
-        //
+        $datas=$id->progdis;
+        return view ('ImportDataMapaba/list',compact('datas','id'));
     }
 
     /**

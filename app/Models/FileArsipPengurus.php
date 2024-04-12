@@ -9,4 +9,18 @@ class FileArsipPengurus extends Model
 {
   protected $table='file_arsip_penguruses';
   protected $guarded=['id'];
+
+  public function time()
+   {
+    return $this->created_at
+    ->isoformat('dddd, D MMMM Y').' , '.$this->created_at
+    ->translatedformat('h:i');
+   }
+
+   public function timeupdate()
+   {
+    return $this->updated_at
+    ->isoformat('dddd, D MMMM Y').' , '.$this->updated_at
+    ->translatedformat('h:i');
+   }
 }

@@ -43,6 +43,21 @@
         <div class="row">
         
           <!-- ./col -->
+
+               <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box " style="background:royalblue;color:white;">
+              <div class="inner">
+                <h3>{{$total}}</h3>
+
+                <p>Total Akun</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+             
+            </div>
+          </div>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box badge-success">
@@ -103,23 +118,32 @@ Tambah Kader</a>
       @foreach($kaders as$kader)
        <tr>
          <th class="text-center">{{$no++}}</th>
-         <td><a href="/anggota_kader/detail-kader/{{$kader->username}}">{{$kader->name}}</a></td>
+         <td><a href="/anggota_kader/detail-kader/{{$kader->username}}">{{$kader->name}}</a> <a href="/anggota_kader/ubah-password-kader/{{$kader->id}}" class="btn btn-warning btn-xs float-right"><i class="fas fa-lock"></i> </a></td>
          <td>
            @if($kader->afirasis->count()>0)
-           <span class="badge badge-success">Sudah DiBuat</span>
+           <span class="badge badge-success"><i class="far fa-check-circle"></i> Sudah DiBuat</span>
            @endif
              @if($kader->afirasis->count()<1)
-           <span class="badge badge-danger">Belum DiBuat</span>
+           <span class="badge badge-danger"><i class="fas fa-times"></i> Belum DiBuat</span>
            @endif
          </td>
-         <td class="text-center"><b>{{$kader->posts->count()}}</b></td>
+         <td class="text-center">
+          @if($kader->posts->count()>0)
+          <b>{{$kader->posts->count()}}</b> -<a href="/anggota_kader/postingan_kader/{{$kader->username}}">(Lihat)</a>
+          @endif
+
+            @if($kader->posts->count()<1)
+          <b>{{$kader->posts->count()}}</b> 
+          @endif
+
+        </td>
          <td>
            @if($kader->status=='active')
-           <p class="badge badge-success">Akun Aktif</p>
+           <p class="badge badge-success"><i class="fas fa-user-check"></i> Akun Aktif</p>
            @endif
 
             @if($kader->status=='disable')
-           <p class="badge badge-danger">Akun Di Blokir</p>
+           <p class="badge badge-danger"><i class="fas fa-user-slash"></i> Akun Di Blokir</p>
            @endif
          </td>
 
@@ -136,7 +160,7 @@ Tambah Kader</a>
            @endif
 
             @if($kader->afirasis->count()<0)
-            @if($kader->posts->count()<0)  
+            @if($kader->post->count()<0)  
       
            @endif
            @endif

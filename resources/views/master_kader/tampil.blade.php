@@ -1,4 +1,28 @@
 <!DOCTYPE html>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width:8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius:5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:lightsteelblue; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:lightseagreen; 
+}
+</style>
 <html lang="en">
 <head>
   <meta charset="UTF-8">

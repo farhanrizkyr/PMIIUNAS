@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sigs', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->text('status')->default ('Belum Divalidasi');
+            $table->string('status')->default ('Belum Divalidasi');
             $table->string('email1');
             $table->string('email2');
             $table->string('hp');

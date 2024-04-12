@@ -37,9 +37,14 @@ class UserKaderController extends Controller
     {
         request()->validate([
         'name'=>'required',
-        'email'=>'required|email:dns',
-        'bio'=>'required',
-        'username'=>'required',
+        'email'=>'required|email',
+        'username'=>'required|alpha_dash',
+
+        ],
+        [
+        'username.alpha_dash'=>'Tidak Boleh Ada Spasi',
+        'name.required'=>'Tidak Boleh Kosong',
+        'email.required'=>'Tidak Boleh Kosong',
 
         ]);
 

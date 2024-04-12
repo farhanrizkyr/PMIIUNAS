@@ -66,7 +66,7 @@ class MapabaController extends Controller
     public function store(Request $request)
     {
         request ()->validate([
-         'name'=>'required|unique:mapabas',
+         'name'=>'required',
          'hp'=>'required|numeric|unique:mapabas',
          'kampus'=>'required',
          'hp'=>'required|unique:mapabas',

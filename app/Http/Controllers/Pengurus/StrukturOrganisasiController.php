@@ -56,7 +56,7 @@ class StrukturOrganisasiController extends Controller
          ]);
          
          $file=request()->file('gambar');
-         $filename=$file->getClientOriginalName();
+         $filename=time().'.'.$file->getClientOriginalExtension();
          $file->move(public_path('FotoStruktur'),$filename);
          StrukturOrganisasi::create([
           'name'=>request()->name,
@@ -120,7 +120,7 @@ class StrukturOrganisasiController extends Controller
          
          if (request()->gambar <> '') {
            $file=request()->file('gambar');
-         $filename=$file->getClientOriginalName();
+         $filename=time().'.'.$file->getClientOriginalExtension();
          $file->move(public_path('FotoStruktur'),$filename);
          StrukturOrganisasi::find($id)->update([
           'name'=>request()->name,

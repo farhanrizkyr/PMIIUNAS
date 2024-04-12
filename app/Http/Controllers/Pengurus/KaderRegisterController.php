@@ -23,8 +23,8 @@ class KaderRegisterController extends Controller
      public function daftarkader()
    {
       request()->validate([
-       'name'=>'required',
-       'username'=>'required|unique:kaders',
+       'name'=>'required|unique:kaders',
+       'username'=>'required|unique:kaders|alpha_dash',
        'email'=>'required|email:dns|unique:kaders',
        'password'=>'required|confirmed|min:5',
 
@@ -34,11 +34,13 @@ class KaderRegisterController extends Controller
       [
 
       'name.required'=>'Wajib Diisi',
+      'name.unique'=>'Account Sudah Ada',
       'email.required'=>'Wajib Diisi',
       'email.email'=>'Tidak valid',
       'email.unique'=>'Tidak Boleh Sama',
       'username.required'=>'Wajib Diisi',
-       'username.unique'=>'Tidak Boleh Sama',
+      'username.unique'=>'Tidak Boleh Sama',
+      'username.alpha_dash'=>'Tidak Boleh Ada Spasi',
       'username.required'=>'Wajib Diisi',
       'password.required'=>'Wajib Diisi',
       'password.confirmed'=>' Password Tidak Sesuai ',

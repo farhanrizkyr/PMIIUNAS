@@ -23,8 +23,10 @@
   <table class="table" id="tabel-data" >
     <thead>
       <tr>
-        <th>no</th>
+        <th>No</th>
         <th>Masa Kepengurusan</th>
+        <th>Tanggal Upload</th>
+        <th>Tanggal Update</th>
         <th>File PDF</th>
         <th>Aksi</th>
       </tr>
@@ -36,9 +38,14 @@
       <tr>
         <td>{{$no++;}}</td>
         <td>{{$data->name}}</td>
-        <td><a href="/FileArsipPengurus/{{$data->file}}" class="btn btn-success">
-          <i class="fas fa-download"></i>
-          Download File</a></td>
+        <td>{{$data->time()}}</td>
+         <td>{{$data->timeupdate()}}</td>
+        <td>
+          <form method="get" target="framename" target="_blank" action="FileArsipPengurus/{{$data->file}}">
+            <button class="btn  btn-success btn-sm"> <i class="fas fa-download"></i> Download</button>
+        </form>
+        </td>
+  
         <td>
             <form method="post" action="filearsipkomi/hapus_file_pengurus/{{$data->id}}" class="d-inline">
               @csrf

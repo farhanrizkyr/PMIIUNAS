@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('rayon')->nullable();
             $table->string('tempat')->nullable();
             $table->date('tl')->nullable();
-            $table->longtext('bio')->default('-');
+            $table->longtext('bio')->nullable();
             $table->string('status')->default('active');
             $table->string('avatar')->nullable();
             $table->string('email')->unique();

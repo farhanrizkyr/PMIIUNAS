@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Kader\CategoryController;
+use App\Http\Controllers\Blog\BlogController;
+use App\Http\Controllers\Mrc\MerchandiseController;
 use App\Http\Controllers\Kader\PostController;
 use App\Http\Controllers\Kader\AfirasiController;
 use App\Http\Controllers\Pengurus\HomeeController;
@@ -44,13 +46,13 @@ use App\Http\Controllers\Pengurus\SaranController;
 |
 */
 Route::get('/formpendaftaranMapaba',[DashboardController::class,'formapaba']);
-Route::get('/merchandises',[DashboardController::class,'merchandise']);
-Route::get('/blog',[DashboardController::class,'blog']);
 Route::post('/formpendaftaranMapaba/proses_pendaftaran_mapaba',[DashboardController::class,'tambah']);
 Route::get('/formpendaftaranSIG',[DashboardController::class,'formsig']);
 Route::post('/formpendaftaranSIG/proses_pendaftaran_sig',[DashboardController::class,'simpan_sig']);
 //===============================ImportDataPengurus===================//
 Route::get('/history-datamapaba',[ImportDataMapabaController::class,'index']);
+Route::get('/history-datamapaba/list-mahasiswa-program-studi/{id}',[ImportDataMapabaController::class,'list']);
+
 //================================Dashboard==================//
 Route::get('/home',[HomeeController::class,'home']);
 Route::get('/grafiks',[HomeeController::class,'grafik']);
@@ -158,7 +160,7 @@ Route::delete('/kader/hapus_category/{id}',[CategoryController::class,'destroy']
 //===============================Post===================//
 Route::get('/kader/artikel',[PostController::class,'index']);
 Route::get('/kader/artikel/tambah_artikel',[PostController::class,'create']);
-Route::post('/kader/proses_tambah_post',[PostController::class,'store']);
+Route::post('/kader/proses_tambah_postingan',[PostController::class,'store']);
 Route::delete('/kader/proses_hapus_post/{id}',[PostController::class,'destroy']);
 Route::get('/kader/edit_post/{slug}',[PostController::class,'edit']);
 Route::post('/kader/proses_edit_post/{id}',[PostController::class,'update']);
@@ -168,6 +170,9 @@ Route::post('/kader/allposts/proses_tambah_post1/',[PostController::class,'store
 //==============================UserPengurus===================//
 Route::get('/anggota_pengurus',[UserController::class,'pengurus']);
 Route::get('/anggota_kader',[UserController::class,'kaders']);
+Route::post('/anggota_kader/ubah-password-kader/{id}',[UserController::class,'prosess']);
+Route::get('/anggota_kader/ubah-password-kader/{id}',[UserController::class,'ubah_password_kader']);
+Route::get('/anggota_kader/postingan_kader/{user:username}',[UserController::class,'postingan_kaders']);
 Route::get('/anggota_kader/detail-kader/{username}',[UserController::class,'detailkader']);
 Route::get('/anggota_kader/ubahstatus/{id}',[UserController::class,'status']);
 Route::post('/anggota_kader/proses-ubah-status/{id}',[UserController::class,'proses_ubah']);
@@ -240,3 +245,9 @@ Route::delete('/kader/testimoni/delete-testimoni/{id}',[AfirasiController::class
 Route::post('/kader/create-testimoni',[AfirasiController::class,'create']);
 Route::get('/kader/testimoni/edit-testimoni/{id}',[AfirasiController::class,'edit']);
 Route::post('/kader/proses-edit-testimoni/{id}',[AfirasiController::class,'proses_edit']);
+//==============================Blog===================//
+Route::get('/blog',[BlogController::class,'blog']);
+Route::get('/blog/author/{kader:username}',[BlogController::class,'author']);
+Route::get('/blog/category/{category:slug}',[BlogController::class,'category']);
+//==============================Mrc===================//
+Route::get('/merchandises',[MerchandiseController::class,'merchandise']);

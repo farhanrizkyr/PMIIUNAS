@@ -2,7 +2,7 @@
 @section('title','Tambah Postingan Artikel')
 @section('content')
 <div class="card" style="padding:10px;">
-  <form method="post" action="/kader/proses_tambah_post/" enctype="multipart/form-data">
+  <form method="post" action="/kader/proses_tambah_postingan/" enctype="multipart/form-data">
     @csrf
     <div class="grup">
       <label for="">Judul</label>

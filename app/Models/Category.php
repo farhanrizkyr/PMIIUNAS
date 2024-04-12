@@ -10,9 +10,9 @@ class Category extends Model
    protected $table='categories';
    protected $guarded=['id'];
    
-   public function posts()
+   public function categories()
    {
-     return $this->hasMany(Post::class);
+     return $this->hasMany(Post::class)->orderBy('created_at', 'desc');
    }
 
 
