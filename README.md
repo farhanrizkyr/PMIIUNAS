@@ -73,9 +73,9 @@ https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/a7dd0180-15e3-491a-bea1
 https://github.com/farhanrizkyr/PMIIUNAS/assets/67540962/cc944520-655c-40b4-9b07-65c8c2cfe650
 
 
-![Url pengaturan CMS]
+<h6>pengaturan CMS</h6>
 127.0.0.1:8000/home/login
-![Url Sistem Artikel Blog]
+<h6>Url Sistem Artikel Blog</h6>
 127.0.0.1:8000/kader/login
 
 
