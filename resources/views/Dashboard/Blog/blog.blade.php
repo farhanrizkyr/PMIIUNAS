@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  	<h1 class="text-center mt-5">Blog Posts</h1>
+  	<h1 class="text-center mt-5">Recent Posts</h1>
   	<hr>
 
 <div class="row justify-content-center"> 
