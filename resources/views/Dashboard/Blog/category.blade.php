@@ -43,7 +43,7 @@
         <p class="card-text">{!!$body!!}...</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">{{$kaders->created_at->diffForHumans()}}</small>
+        <small class="text-muted"><img width="35px;" class="rounded-circle" src="{{$kaders->post->avatar()}}" alt="{{$kaders->post->name}}"> <a href="/blog/author/{{$kaders->post->username}}" style="text-decoration:none;">{{$kaders->post->name}}</a> </small>
       </div>
     </div>
   </div>
