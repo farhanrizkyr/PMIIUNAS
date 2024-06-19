@@ -36,12 +36,12 @@
     <div class="card h-100">
       <img src="{{$post->image()}}" class="card-img-top" alt="...">
       <div class="card-body">
-      	  <small>By <a href="/blog/author/{{$post->post->username}}" style="text-decoration:none;">{{$post->post->name}}</a> | {{$post->created_at->isoformat('dddd D, MMMM Y')}}</small>
+      	  <small>{{$post->created_at->isoformat('dddd D, MMMM Y')}}</small>
           <a href="blog/{{$post->slug}}" style="text-decoration:none; color:black;"><h5 class="card-title">{{$post->name}}</h5></a>
         <p class="card-text">{!!$body!!}...</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">{{$post->created_at->diffForHumans()}}</small>
+        <small class="text-muted"><img width="35px;" class="rounded-circle" src="{{$post->post->avatar()}}" alt="{{$post->post->name}}"> <a href="/blog/author/{{$post->post->username}}" style="text-decoration:none;">{{$post->post->name}}</a> </small>
       </div>
     </div>
   </div>

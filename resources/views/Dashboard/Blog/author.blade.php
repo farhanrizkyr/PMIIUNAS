@@ -35,14 +35,13 @@
   <div class="col-md">
     <div class="card h-100">
       <img src="{{$kaders->image()}}" class="card-img-top" alt="...">
-      <div class="card-body">
-          <small>By <a href="/blog/author/{{$kaders->post->username}}" style="text-decoration:none;">{{$kaders->post->name}}</a> | {{$kaders->created_at->isoformat('dddd D, MMMM Y')}}</small>
+      <div class="card-body">{{$kaders->created_at->isoformat('dddd D, MMMM Y')}}</small>
          <a href="blog/{{$kaders->slug}}" style="text-decoration:none; color:black;"><h5 class="card-title">{{$kaders->name}}</h5></a>
       
         <p class="card-text">{!!$body!!}...</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">{{$kaders->created_at->diffForHumans()}}</small>
+        <small class="text-muted"><img width="35px;" class="rounded-circle" src="{{$kaders->post->avatar()}}" alt="{{$kaders->post->name}}"> <a href="/blog/author/{{$kaders->post->username}}" style="text-decoration:none;">{{$kaders->post->name}}</a> </small>
       </div>
     </div>
   </div>
