@@ -78,11 +78,8 @@
           </td>
         <td><a href="#" data-toggle="modal" data-target="#detail-artikel{{$data->id}}">{!!$body!!}</a></td>
         <td>
-      <form method="post" action="/kader/proses_hapus_post/{{$data->id}}" class="d-inline">
-            @csrf
-            @method('delete')
-            <button onclick="return confirm ('yakin ingin menghapus?')" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-          </form>
+     
+       <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#hapus-artikel{{$data->id}}"><i class="fas fa-trash"></i> Delete</a>
           
          <a href="/kader/edit_post/{{$data->slug}}" class="btn btn-warning">
            <i class="fas fa-edit"></i>
@@ -110,7 +107,37 @@
         </article>
       </div>
       <div class="modal-footer">
+       
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
+
+
+@foreach ($posts as $data)
+    <div class="modal fade" id="hapus-artikel{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white bg-danger">
+        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fas fa-newspaper"></i> Hapus Postingan  Artikel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Apakah anda ingin menghapus Artikel dengan judul {{$data->name}} ?
+      </div>
+      <div class="modal-footer">
+
+      <form method="post" action="/kader/proses_hapus_post/{{$data->id}}" class="d-inline">
+            @csrf
+            @method('delete')
+            <button class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+          </form>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ocatagone"></i> Close</button>
         
       </div>
     </div>
