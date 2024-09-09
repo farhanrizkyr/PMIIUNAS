@@ -48,12 +48,7 @@
        <th>{{$no++;}}</th>
        <td>{{$data->name}}</td>
        <td>
-        <form method="post" action="/kader/hapus_category/{{$data->id}}"  class="d-inline">
-          @csrf
-          @method('delete')
-          <button onclick="return confirm('Yakin Ingin Menghapus Data Category: {{$data->name}}')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
-        </form>
-
+        <a href="#"  data-toggle="modal" data-target="#hapus-category{{$data->id}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</a>
       <a href="#"  data-toggle="modal" data-target="#edit-category{{$data->id}}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</a>
        
        </td>
@@ -99,6 +94,35 @@
 @endforeach
 <!-- End Edit Category-->
 
+
+<!-- Hapus Category -->
+@foreach ($categories as $data)
+<div class="modal fade" id="hapus-category{{$data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Apakah Anda Ingin Menghapus Category dengan nama {{$data->name}} ? 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+        <form method="post" action="/kader/hapus_category/{{$data->id}}"  class="d-inline">
+          @csrf
+          @method('delete')
+          <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@endforeach
+<!-- End Hapus Category-->
 @endsection
 
 
