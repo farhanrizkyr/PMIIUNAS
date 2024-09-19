@@ -26,10 +26,10 @@ class UserKaderController extends Controller
         return view('UserKader/setting');
     }
 
-    public function change_profile($username)
+    public function change_profile()
     {
-        $user=Kader::where('username',$username)->first();
-       return view('UserKader/change',compact('user'));
+      
+       return view('UserKader/change');
     }
 
 

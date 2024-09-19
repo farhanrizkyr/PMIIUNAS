@@ -211,7 +211,7 @@ Route::get('/kader',[UserKaderController::class,'index']);
 Route::get('/user-profile',[UserKaderController::class,'profile']);
 Route::post('/user-profile/update/{id}',[UserKaderController::class,'update']);
 Route::post('/user-profile/check_avatar/{id}',[UserKaderController::class,'check_avatar']);
-Route::get('/user-profile/{username}',[UserKaderController::class,'change_profile']);
+Route::get('/user-change-profile/',[UserKaderController::class,'change_profile']);
 //==============================LoginKader===================//
 Route::get('/kader/login',[KaderLoginController::class,'login'])->name('kader.login');
 Route::get('/kader/logout',[KaderLoginController::class,'logout'])->name('kader.logout');

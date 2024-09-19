@@ -163,7 +163,7 @@ Setting-  {{Auth::user()->name}}
                        
                   
                     <div class="card-footer text-right">
-                     <a href="/user-profile/{{Auth::user()->username}}" class="btn btn-primary"><i class="fas fa-edit"></i> Edit </a>
+                     <a href="/user-change-profile/" class="btn btn-primary"><i class="fas fa-edit"></i> Edit </a>
                      <button type="button" style="background:salmon;" class="btn" data-toggle="modal" data-target="#exampleModal">
                    <i class="fas fa-user-edit"></i> Change Avatar
                   </button>
