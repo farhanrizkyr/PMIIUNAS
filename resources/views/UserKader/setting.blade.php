@@ -44,7 +44,7 @@ Setting-  {{Auth::user()->name}}
                     <img alt="image" src="{{Auth::user()->avatar()}}" class="rounded-circle profile-widget-picture">
                     <div class="profile-widget-items">
                       <div class="profile-widget-item">
-                        <div class="profile-widget-item-label"><i class="fas fa-newspaper"></i> Posts</div>
+                        <div class="profile-widget-item-label"><i class="fas fa-newspaper"></i> Postingan Artikel</div>
                         <div class="profile-widget-item-value">{{Auth::user()->posts->count()}}</div>
                       </div>
                      
