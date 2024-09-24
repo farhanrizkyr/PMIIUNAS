@@ -100,11 +100,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <article>
+      
           <h5>{{$data->name}}</h5>
           <hr>
-          {!!$data->body!!}
-        </article>
+              {!! Str::limit($data->body,1009)!!}
+
       </div>
       <div class="modal-footer">
        
