@@ -120,20 +120,12 @@
 
             @if(Auth::user()->status=='active')
             <a href="/kader/testimoni/edit-testimoni/{{$data->id}}" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</a>
-            <form method="post" action="/kader/testimoni/delete-testimoni/{{$data->id}}" class="d-inline">
-              @csrf
-              @method('delete')
-              <button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-            </form>
+            <a href=""class="btn btn-danger " data-toggle="modal" data-target="#delete-catatan{{$data->id}}"><i class="fas fa-trash"></i> Delete</a>
             @endif
 
 
             @if(Auth::user()->status=='disable')
-            <form method="post" action="/kader/testimoni/delete-testimoni/{{$data->id}}" class="d-inline">
-              @csrf
-              @method('delete')
-              <button onclick="return confirm('Yakin Ingin Menghapus?')" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
-            </form>
+            <a href=""class="btn btn-danger " data-toggle="modal" data-target="#delete-catatan{{$data->id}}"><i class="fas fa-trash"></i> Delete</a>
             @endif
           </td>
         </tr>
@@ -163,6 +155,36 @@
   </div>
 </div>
 
+  @endforeach
+
+
+
+  @foreach ($datas as $data)
+  <div class="modal fade" id="delete-catatan{{$data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Hapus Testimoni</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <p>
+          Apakah Anda Ingin Menghapus Testimoni?
+         </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-times-circle"></i> Close</button>
+          <form method="post" action="/kader/testimoni/delete-testimoni/{{$data->id}}" class="d-inline">
+            @csrf
+            @method('delete')
+            <button  class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   @endforeach
 
 
