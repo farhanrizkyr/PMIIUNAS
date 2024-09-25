@@ -19,15 +19,17 @@
 </div>
 @endif
 <br>
-
+<div class="card" style="padding:35px;">
+  <h1>Halaman Postingan  Artikel</h1>
+</div>
 <br><br><br>
 @if(Auth::user()->status=='active')
-<a href="/kader/artikel/tambah_artikel" class="btn btn-primary mb-4"> <i class="fas fa-plus"></i> Tamabah Post</a>
+<a href="/kader/artikel/tambah_artikel" class="btn btn-primary mb-4"> <i class="fas fa-plus"></i> Tamabah Postingan Baru</a>
 
 @endif
 
 @if(Auth::user()->status=='disable')
-<button class="btn btn-secondary mb-4" disabled><i class="fas fa-plus "></i> Tambah Post</button>
+<button class="btn btn-secondary mb-4" disabled><i class="fas fa-plus "></i> Tambah Postingan Baru</button>
 
 
           <div class="alert alert-warning" role="alert">
@@ -35,7 +37,9 @@
 </div>
 @endif
 
-<h1>Post Artikel</h1>
+
+
+
 <div class="table-wrapper card" style="padding:10px;">
   <table id="tabel-data" class="table display">
     <thead>
