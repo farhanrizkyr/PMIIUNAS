@@ -69,7 +69,7 @@ Setting-  {{Auth::user()->name}}
                        @if(Auth::user()->status=='disable')
                     Status: <p class="text-danger">Akun DiBlokir</p>
                     @endif
-                  <h6> <i class="fas fa-calendar-week"></i> DiBuat: {{Auth::user()->created_at->isoformat('MMMM Y')}}</h6>
+                  <h6> <i class="fas fa-calendar-week"></i> DiBuat: {{Auth::user()->created_at->isoformat('DD MMMM Y')}}</h6>
                     <h6> <i class="fas fa-clock"></i> DiUpdate: {{Auth::user()->updated_at->diffForHumans()}}</h6>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ Setting-  {{Auth::user()->name}}
                           <div class="form-group col-md-6 col-12">
                             <label>Tanggal Lahir</label>
                             @if(Auth::user()->tl)
-                            <input type="text" class="form-control" value="{{Carbon\Carbon::parse(Auth::user()->tl)->isoformat('DD MMMM Y')}}" readonly>
+                            <input type="text" class="form-control" value="{{Carbon\Carbon::parse(Auth::user()->tl)->isoformat('dddd, DD MMMM Y')}}" readonly>
                             @endif
 
                              @if(Auth::user()->tl==null)
