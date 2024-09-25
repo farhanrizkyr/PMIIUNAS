@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Kader;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Afirasi;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class AfirasiController extends Controller
 {
 

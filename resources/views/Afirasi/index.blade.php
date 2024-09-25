@@ -35,33 +35,7 @@
 @endif
 @endif
 
-@if(Auth::user()->status=='disable')
-@if($datas->count()<1)
-<button type="button" disabled class="btn btn-danger disable  mb-4" data-toggle="modal" data-target="#exampleModal">
-  <i class="fas fa-plus"></i> Buat Testimoni
-</button>
-@endif
-@endif
 
-
-@if(Auth::user()->status=='disable')
-@if($datas->count()>0)
-<button type="button" disabled class="btn btn-danger mb-4" data-toggle="modal" data-target="#exampleModal">
-  <i class="fas fa-times-circle"></i> Buat Testimoni
-</button>
-@endif
-@endif
-
-@if(Auth::user()->status=='active')
-@if($datas->count()>0)
-<button type="button" disabled class="btn btn-secondary mb-4" data-toggle="modal" data-target="#exampleModal">
-  <i class="fas fa-times-circle"></i> Buat Testimoni
-</button>
-@endif
-@endif
-
-
-  
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
