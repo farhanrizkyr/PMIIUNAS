@@ -7,7 +7,7 @@ Postingan Blog: {{$user->name}}
 <b><h4 class="text-center">Jumlah Postingan: {{$user->posts->count()}}</h4></b>
 <div class="table-wrapper">
 	<table class="table table-hover" id="tabel-data">
-	<a href="/anggota_kader" class="btn btn-warning mb-3"><i class="fas fa-arrow-left"></i> Kembali Ke List Anggota Kader</a>
+	<a href="javascript:window.close();" class="btn btn-warning mb-3"><i class="fas fa-arrow-left"></i> Kembali Ke List Anggota Kader</a>
 	<thead>
 		 <tr>
         <th class="text-center">No.</th>

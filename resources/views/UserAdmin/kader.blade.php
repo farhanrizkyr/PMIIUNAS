@@ -129,7 +129,7 @@ Tambah Kader</a>
          </td>
          <td class="text-center">
           @if($kader->posts->count()>0)
-          <b>{{$kader->posts->count()}}</b> -<a href="/anggota_kader/postingan_kader/{{$kader->username}}">(Lihat)</a>
+          <b>{{$kader->posts->count()}}</b> -<a href="/anggota_kader/postingan_kader/{{$kader->username}}" target="_blank">(Lihat)</a>
           @endif
 
             @if($kader->posts->count()<1)
