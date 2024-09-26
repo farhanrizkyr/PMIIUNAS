@@ -118,7 +118,7 @@ Tambah Kader</a>
       @foreach($kaders as$kader)
        <tr>
          <th class="text-center">{{$no++}}</th>
-         <td><a href="/anggota_kader/detail-kader/{{$kader->username}}">{{$kader->name}}</a> <a href="/anggota_kader/ubah-password-kader/{{$kader->id}}" class="btn btn-warning btn-xs float-right"><i class="fas fa-lock"></i> </a></td>
+         <td><a href="/anggota_kader/detail-kader/{{$kader->username}}">{{$kader->name}}</a> <a href="/anggota_kader/ubah-password-kader/{{$kader->id}}" class="btn btn-warning btn-xs float-right rounded-circle"><i class="fas fa-lock"></i> </a></td>
          <td>
            @if($kader->afirasis->count()>0)
            <span class="badge badge-success"><i class="far fa-check-circle"></i> Sudah DiBuat</span>
@@ -129,7 +129,7 @@ Tambah Kader</a>
          </td>
          <td class="text-center">
           @if($kader->posts->count()>0)
-          <b>{{$kader->posts->count()}}</b> -<a href="/anggota_kader/postingan_kader/{{$kader->username}}">(Lihat)</a>
+          <b>{{$kader->posts->count()}}</b> -<a href="/anggota_kader/postingan_kader/{{$kader->username}}" target="_blank">(Lihat)</a>
           @endif
 
             @if($kader->posts->count()<1)
