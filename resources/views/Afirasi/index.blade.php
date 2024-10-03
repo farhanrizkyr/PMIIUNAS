@@ -84,7 +84,7 @@
         <tr>
           <td>
             @if(strlen($data->catatan)>150)
-              {!!substr($data->catatan,0,150)!!} <a href=""class="mb-4" data-toggle="modal" data-target="#detail-catatan{{$data->id}}">more....</a>
+              {!!substr($data->catatan,0,150)!!} <a href=""class="mb-4" data-toggle="modal" data-target="#detail-catatan{{$data->id}}">Lanjutkan Membaca....</a>
               @else
               {!!$data->catatan!!}
             @endif
