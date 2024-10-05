@@ -51,6 +51,7 @@ Route::get('/formpendaftaranSIG',[DashboardController::class,'formsig']);
 Route::post('/formpendaftaranSIG/proses_pendaftaran_sig',[DashboardController::class,'simpan_sig']);
 //===============================ImportDataPengurus===================//
 Route::get('/history-datamapaba',[ImportDataMapabaController::class,'index']);
+Route::get('//history-datamapaba/list-tahun-angkatan/{id}',[ImportDataMapabaController::class,'list_tahun_mahasiswa']);
 Route::get('/history-datamapaba/list-mahasiswa-program-studi/{id}',[ImportDataMapabaController::class,'list']);
 
 //================================Dashboard==================//

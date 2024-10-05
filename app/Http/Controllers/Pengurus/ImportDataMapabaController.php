@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pengurus;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mapaba;
+use App\Models\Tahun;
 use App\Models\Progdi;
 class ImportDataMapabaController extends Controller
 {
@@ -48,7 +49,7 @@ class ImportDataMapabaController extends Controller
      * @param  \App\Models\ImportDataMapaba  $importDataMapaba
      * @return \Illuminate\Http\Response
      */
-    public function show(ImportDataMapaba $importDataMapaba)
+    public function show()
     {
         //
     }
@@ -59,7 +60,7 @@ class ImportDataMapabaController extends Controller
      * @param  \App\Models\ImportDataMapaba  $importDataMapaba
      * @return \Illuminate\Http\Response
      */
-    public function edit(ImportDataMapaba $importDataMapaba)
+    public function edit()
     {
         //
     }
@@ -83,9 +84,11 @@ class ImportDataMapabaController extends Controller
      * @param  \App\Models\ImportDataMapaba  $importDataMapaba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImportDataMapaba $importDataMapaba)
+    public function  list_tahun_mahasiswa(Tahun $id)
     {
-        //
+       $datas=$id->tahuns->where('archive','approve');
+       return view ('ImportDataMapaba/list_tahun',compact('datas','id'));
+
     }
 }
 
