@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mapaba;
 use App\Models\Tahun;
-use App\Models\Tahun;
 use App\Models\Progdi;
 class ImportDataMapabaController extends Controller
 {
@@ -50,7 +49,7 @@ class ImportDataMapabaController extends Controller
      * @param  \App\Models\ImportDataMapaba  $importDataMapaba
      * @return \Illuminate\Http\Response
      */
-    public function show()
+   
     public function show()
     {
         //
@@ -63,7 +62,7 @@ class ImportDataMapabaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit()
-    public function edit()
+
     {
         //
     }
@@ -87,7 +86,7 @@ class ImportDataMapabaController extends Controller
      * @param  \App\Models\ImportDataMapaba  $importDataMapaba
      * @return \Illuminate\Http\Response
      */
-    public function  list_tahun_mahasiswa(Tahun $id)
+  
     public function  list_tahun_mahasiswa(Tahun $id)
     {
        $datas=$id->tahuns->where('archive','approve');
