@@ -61,9 +61,7 @@ class="fas fa-sync-alt"></i></button>
          $m=substr($datas->minat,0,30)
           @endphp 
           
-         @php
-         $p=substr($datas->pengalaman,0,30)
-          @endphp 
+       
             <td>{{$no++;}}</td>
             <td>{{$datas->name}}</td>
             <td>{{Carbon\Carbon::parse($datas->created_at)->isoformat('dddd ,DD MMM Y')}}</td>
@@ -71,8 +69,20 @@ class="fas fa-sync-alt"></i></button>
             <td>{{optional($datas->tahun)->tahun??null}}</td>
            <td>{{optional($datas->progdi)->progdi??null}}</td>
             <td>{{$datas->hp}}</td>
-            <td><a href="listmapaba/sub/{{$datas->slug}}">{!!$p!!}</a></td>
-           <td><a href="listmapaba/m/{{$datas->slug}}">{!!$m!!}</a></td>
+            <td>
+              @if (strlen($datas->pengalaman)>50)
+              {!! substr($datas->pengalaman,0,50) !!} <a href="listmapaba/sub/{{$datas->slug}}">Lanjutkan...</a>
+              @else
+              {!!$datas->pengalaman!!}
+              @endif
+            </td>
+           <td>
+            @if (strlen($datas->minat)>50)
+                {!! substr($datas->minat,0,50) !!} <a href="/listmapaba/m/{{$datas->slug}}">Lanjutkan</a>
+                @else
+                {!!$datas->minat!!}
+            @endif
+           </td>
            <td>
             <form method="post" action="/listmapaba/ver_mapaba/{{$datas->id}}" class="d-inline">
               @csrf
