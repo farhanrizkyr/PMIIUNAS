@@ -3,7 +3,7 @@
 @section('page','Ubah Profile')
 @section('contentt','Halaman Ubah Profile')
 @section('content')
-<form method="post" action="/user/update_check/{{$data->id}}">
+<form method="post" action="/user/update_check/{{Auth::user()->id}}">
 	@csrf
 	<div class="group">
 	<label>Nama</label>

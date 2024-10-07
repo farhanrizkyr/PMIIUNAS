@@ -310,7 +310,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/user/{{Auth::user()->username}}" class="nav-link">
+                <a href="/user/" class="nav-link">
                   <i class="fas fa-cog nav-icon text-primary"></i>
                   <p class="text-primary">Settings</p>
                 </a>

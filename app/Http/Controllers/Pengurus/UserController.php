@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Kader;
 use Session;
-use Auth;
-use  Hash;
+use Illuminate\Support\Facades\Auth;
+use  Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -75,11 +75,11 @@ class UserController extends Controller
        return redirect('/anggota_pengurus')->with('pesan','User Account Berhasil DiHapus');
      }
 
-     public function ubah($username)
+     public function ubah()
 
      {
       
-       return view('UserAdmin/ubahuser',compact('data'));
+       return view('UserAdmin/ubahuser');
      }
 
 

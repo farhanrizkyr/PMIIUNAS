@@ -178,8 +178,8 @@ Route::get('/anggota_kader/detail-kader/{username}',[UserController::class,'deta
 Route::get('/anggota_kader/ubahstatus/{id}',[UserController::class,'status']);
 Route::post('/anggota_kader/proses-ubah-status/{id}',[UserController::class,'proses_ubah']);
 Route::get('/anggota_kader/tambah_akun',[UserController::class,'addkader']);
-Route::get('/user/{username}',[UserController::class,'settings']);
-Route::get('/user/ubah/ubah-user',[UserController::class,'ubah']);
+Route::get('/user/',[UserController::class,'settings']);
+Route::get('/user/ubah-user/',[UserController::class,'ubah']);
 Route::delete('/user/hapus/{id}',[UserController::class,'hapusakun']);
 Route::delete('/delete-account-kader/{id}',[UserController::class,'hapus_kader']);
 Route::post('/user/update_check/{id}',[UserController::class,'update']);
