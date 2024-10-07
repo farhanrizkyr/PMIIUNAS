@@ -1,10 +1,10 @@
 @extends('master.tampil')
 @section('tittle')
-List Data Program Studi: {{$id->tahun}}
+List Data Tahun Angkatan Mahasiswa: {{$id->tahun}}
 @endsection
 @section('page','Data Arsip MAPABA')
 @section('contentt')
-List Data Program Tahun Angkatan Mahasiswa: {{$id->tahun}}
+List Data Tahun Angkatan Mahasiswa: {{$id->tahun}}
 @endsection
 @section('content')
 <a href="/history-datamapaba/" class="btn btn-success mb-4"><i class="fas fa-arrow-left"></i> Kembali Ke List Data History Mapaba</a>
