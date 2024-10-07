@@ -64,7 +64,7 @@ class="fas fa-sync-alt"></i></button>
        
             <td>{{$no++;}}</td>
             <td>{{$datas->name}}</td>
-            <td>{{Carbon\Carbon::parse($datas->created_at)->isoformat('dddd ,DD MMM Y')}}</td>
+            <td>{{Carbon\Carbon::parse($datas->created_at)->isoformat('dddd ,DD MMMM Y')}}</td>
             <td>{{$datas->kampus}}</td>
             <td>{{optional($datas->tahun)->tahun??null}}</td>
            <td>{{optional($datas->progdi)->progdi??null}}</td>
