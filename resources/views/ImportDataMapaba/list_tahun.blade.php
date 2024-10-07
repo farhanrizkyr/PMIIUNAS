@@ -14,7 +14,8 @@ List Data Tahun Angkatan Mahasiswa: {{$id->tahun}}
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama Mahasiswa</th>      
+                <th>Nama Mahasiswa</th>
+                <th>Program Studi </th>    
             </tr>
         </thead>
         
@@ -24,6 +25,7 @@ List Data Tahun Angkatan Mahasiswa: {{$id->tahun}}
            <tr>
            	<th>{{$loop->iteration}}</th>
            	<td>{{$list->name}}</td>
+            <td>{{optional($list->progdi)->progdi}}</td>
            	@endforeach
            </tr>
         
