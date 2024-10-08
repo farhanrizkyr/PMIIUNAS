@@ -54,8 +54,6 @@
             <th>Tahun</th>
             <th>Program Studi</th>
             <th>No HP</th>
-            <th>Pengalaman</th>
-            <th>Minat</th>
           </tr>
           </thead>
           <tbody>
@@ -68,13 +66,11 @@
             <td>{{optional($mapaba->tahun)->tahun??null}}</td>
             <td>{{optional($mapaba->progdi)->progdi??null}}</td>
             <td>{{$mapaba->hp}}</td>
-            <td>{!!$mapaba->pengalaman!!}</td>
-            <td>{!!$mapaba->minat!!}</td>
           </tr>
           @empty
             <tr >
-              <td colspan="8"><div class="alert alert-dark" role="alert">
-              Tidak Ada Ada Data Pendaftaran
+              <td colspan="6"><div class="alert alert-warning text-center" role="alert">
+              Tidak Ada Ada Data Pendaftaran MAPABA saat ini
 </div></td>
             </tr>
           @endforelse
