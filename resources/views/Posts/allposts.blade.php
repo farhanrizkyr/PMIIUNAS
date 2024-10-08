@@ -29,11 +29,19 @@
 
 
           @empty
-
-  <div class="card" style="padding:26px;">
+@if (Auth::user()->status=='active')
+<div class="card" style="padding:26px;">
 <img src="{{asset('v_kader')}}/assets/img/avatar/no-article.png" width="90%;">
-<h5 class="mt-4 text-center">Tidak Ada Postingan Silahkan Buat Postingan Pertama Anda <a href="#"  data-toggle="modal" data-target="#exampleModal">Klik</a> Untuk Membuat !!</h5>
-</div>
+<h5 class="mt-4 text-center">Tidak Ada Postingan Silahkan Buat Postingan Pertama Anda <a href="#" style="text-decoration:none;"  data-toggle="modal" data-target="#exampleModal">Klik</a> Untuk Membuat !!</h5>
+</div> 
+@endif
+
+@if (Auth::user()->status=='disable')
+<div class="card" style="padding:26px;">
+<img src="{{asset('v_kader')}}/assets/img/avatar/no-article.png" width="90%;">
+</div> 
+
+@endif
 
 
 @endforelse
