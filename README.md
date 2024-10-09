@@ -7,6 +7,7 @@ Sistem ini dibuat menggunakan Teknologi Laravel + Boostrap dan MYSQL sistem CMS 
 <li>composer install</li>
 <li>cp .env.example .env</li>
 <li>php artisan key:generate</li>
+<li>php artisan serve</li>   
 </ul>
 
 
