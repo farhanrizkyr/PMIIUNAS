@@ -3,9 +3,11 @@ Sistem ini dibuat menggunakan Teknologi Laravel + Boostrap dan MYSQL sistem CMS 
 
 
 <h4>Cara Install</h4>
-composer install
-cp .env.example .env
-php artisan key:generate
+<ul>
+<li>composer install</li>
+<li>cp .env.example .env</li>
+<li>php artisan key:generate</li>
+</ul>
 
 
 <h3>Menu Admin</h3>
