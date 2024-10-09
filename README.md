@@ -2,6 +2,12 @@
 Sistem ini dibuat menggunakan Teknologi Laravel + Boostrap dan MYSQL sistem CMS ini untuk membantu Anggota organisasi tersebut untuk mengelola website tersebut  dengan sangat mudah tidak perlu ribet lagi dengan beberapa fitur yang tersedia di dalam halaman dashboard yang disediakan lalu terdapat menu kader untuk membuat Postingan Artikel yang ingin di buat oleh seluruh Anggota organisasi tersebut dan juga sistem ini adalah versi terbaru dari versi CMS yang lama yang saya bangun menggunakan PHP native + Boostrap dan MYSQL
 
 
+<h4>Cara Install</h4>
+composer install
+cp .env.example .env
+php artisan key:generate
+
+
 <h3>Menu Admin</h3>
 Halaman Login Pengurus
 
