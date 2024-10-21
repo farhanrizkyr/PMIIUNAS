@@ -1,5 +1,5 @@
 @extends('master.tampil')
-@section('tittle','Tambah Program Studi')
+@section('tittle','Edit Program Studi')
 @section('page',' Edit Program Studi')
 @section('contentt','Halaman Edit Program Studi')
 @section('content')
