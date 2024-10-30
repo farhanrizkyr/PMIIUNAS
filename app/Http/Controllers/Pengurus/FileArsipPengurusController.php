@@ -55,7 +55,7 @@ class FileArsipPengurusController extends Controller
         ]);
         
         $file=request()->file('file');
-        $filename=time().'.'.$file->getClientOriginalExtension();
+        $filename=request()->name.'-'.time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('FileArsipPengurus'),$filename);
       FileArsipPengurus::create([
       'name'=>request()->name, 
@@ -113,7 +113,7 @@ class FileArsipPengurusController extends Controller
         
         if (request ()->file <> '') {
           $file=request()->file('file');
-         $filename=time().'.'.$file->getClientOriginalExtension();
+         $filename=request()->name.'-'. time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path('FileArsipPengurus'),$filename);
       FileArsipPengurus::find($id)->update([
       'name'=>request()->name, 
