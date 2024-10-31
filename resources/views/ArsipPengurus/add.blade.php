@@ -8,6 +8,7 @@
   <div class="grup">
     <label for="">Periode Kepengurusan</label>
     <input name="name" autocomplete="off" type="text" value="{{old('name')}}" class="form-control">
+    <span class="text-danger">Jika ingin menginput file dengan tahun jangan gunakan tanda (/) contoh: 2018/2019</span>
     @error('name')
     <p class="text-danger">{{$message}}</p>
     @enderror

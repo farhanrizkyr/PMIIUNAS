@@ -8,6 +8,7 @@
   <input type="hidden" name="file_lama" value="{{$file->file}}">
   <div class="grup">
     <label for="">Periode Kepengurusan</label>
+    <span class="text-danger">Jika ingin menginput file dengan tahun jangan gunakan tanda (/) contoh: 2018/2019</span>
     <input name="name" autocomplete="off" type="text" value="{{$file->name}}" class="form-control">
     @error('name')
     <p class="text-danger">{{$message}}</p>
