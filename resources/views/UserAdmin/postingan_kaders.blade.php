@@ -12,6 +12,7 @@ Postingan Blog: {{$user->name}}
 		 <tr>
         <th class="text-center">No.</th>
         <th>Judul Postingan</th>
+		<th>Category Postingan</th>
         <th>Gambar</th>
         <th>Upload Postingan</th>
         <th>Body</th>
@@ -24,6 +25,7 @@ Postingan Blog: {{$user->name}}
       	<tr>
       		<td>{{$loop->iteration}}</td>
       		<td>{{$datas->name}}</td>
+			<td>{{optional($datas->category)->name ??  ''}}</td>
       		<th><img width="150" src="{{$datas->image()}}" alt="{{$datas->image}}"></th>
       		<td>{{Carbon\Carbon::parse($datas->created_at)->isoformat('dddd D, MMMM Y')}}</td>
       		<td width="30%">{!!$body!!}</td>
